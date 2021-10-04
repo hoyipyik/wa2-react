@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Route, Switch } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from './components/Home/index'
+import Playhouse from './components/Playhouse/playhouse'
+import Member from './components/Member/member'
+import Donate from './components/Donate/donate'
+
+
+class App extends Component {
+  render() {
+
+    return (
+      <div>
+        <Switch>
+          <Route path="/" exact >
+            <Home/>
+          </Route>
+          <Route path="/playhouse.html">
+            <Playhouse/>
+          </Route>
+          <Route path="/member.html">
+            <Member/>
+          </Route>
+          <Route path="/donate.html">
+            <Donate/>
+          </Route>
+        </Switch>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
