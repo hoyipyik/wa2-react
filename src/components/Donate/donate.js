@@ -33,7 +33,7 @@ function donate() {
                 </ul>
             </nav>
 
-            <section>
+            <section id="pay">
                 <figure>
                     <figcaption>Alipay</figcaption>
                     <img alt="alipay" src={payment}/> 

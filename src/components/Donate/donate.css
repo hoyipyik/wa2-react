@@ -91,12 +91,12 @@ b{
     font-size: 1.1em;
 }
 
-section{
+#pay{
     display: flex;
 }
 
-figure{
-    flex: auto;
+#pay figure{
+    flex: 1;
     margin: 10px auto;
     padding: 5% 0;
     text-align: center;
