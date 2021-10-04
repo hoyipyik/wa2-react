@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hoyipyik/wa2-react/static/css/main.f43fa9f0.chunk.css",
-    "main.js": "/hoyipyik/wa2-react/static/js/main.d8c5fa82.chunk.js",
-    "main.js.map": "/hoyipyik/wa2-react/static/js/main.d8c5fa82.chunk.js.map",
+    "main.js": "/hoyipyik/wa2-react/static/js/main.15854e51.chunk.js",
+    "main.js.map": "/hoyipyik/wa2-react/static/js/main.15854e51.chunk.js.map",
     "runtime-main.js": "/hoyipyik/wa2-react/static/js/runtime-main.f5f8d207.js",
     "runtime-main.js.map": "/hoyipyik/wa2-react/static/js/runtime-main.f5f8d207.js.map",
     "static/js/2.d5c40b48.chunk.js": "/hoyipyik/wa2-react/static/js/2.d5c40b48.chunk.js",
@@ -36,6 +36,6 @@
     "static/js/runtime-main.f5f8d207.js",
     "static/js/2.d5c40b48.chunk.js",
     "static/css/main.f43fa9f0.chunk.css",
-    "static/js/main.d8c5fa82.chunk.js"
+    "static/js/main.15854e51.chunk.js"
   ]
 }
