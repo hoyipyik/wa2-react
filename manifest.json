@@ -1,6 +1,6 @@
 {
-  "short_name": "WA2 Page",
-  "name": "White Album 2 Page",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

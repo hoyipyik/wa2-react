@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/hoyipyik/wa2-react/static/css/main.f43fa9f0.chunk.css",
-    "main.js": "/hoyipyik/wa2-react/static/js/main.15854e51.chunk.js",
-    "main.js.map": "/hoyipyik/wa2-react/static/js/main.15854e51.chunk.js.map",
+    "main.css": "/hoyipyik/wa2-react/static/css/main.527ea09b.chunk.css",
+    "main.js": "/hoyipyik/wa2-react/static/js/main.75b85145.chunk.js",
+    "main.js.map": "/hoyipyik/wa2-react/static/js/main.75b85145.chunk.js.map",
     "runtime-main.js": "/hoyipyik/wa2-react/static/js/runtime-main.f5f8d207.js",
     "runtime-main.js.map": "/hoyipyik/wa2-react/static/js/runtime-main.f5f8d207.js.map",
     "static/js/2.d5c40b48.chunk.js": "/hoyipyik/wa2-react/static/js/2.d5c40b48.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.0d19c6d0.chunk.js": "/hoyipyik/wa2-react/static/js/3.0d19c6d0.chunk.js",
     "static/js/3.0d19c6d0.chunk.js.map": "/hoyipyik/wa2-react/static/js/3.0d19c6d0.chunk.js.map",
     "index.html": "/hoyipyik/wa2-react/index.html",
-    "static/css/main.f43fa9f0.chunk.css.map": "/hoyipyik/wa2-react/static/css/main.f43fa9f0.chunk.css.map",
+    "static/css/main.527ea09b.chunk.css.map": "/hoyipyik/wa2-react/static/css/main.527ea09b.chunk.css.map",
     "static/js/2.d5c40b48.chunk.js.LICENSE.txt": "/hoyipyik/wa2-react/static/js/2.d5c40b48.chunk.js.LICENSE.txt",
     "static/media/After All～綴る想い～.7639ac19.flac": "/hoyipyik/wa2-react/static/media/After All～綴る想い～.7639ac19.flac",
     "static/media/CC Op.b0e12204.mp4": "/hoyipyik/wa2-react/static/media/CC Op.b0e12204.mp4",
@@ -35,7 +35,7 @@
   "entrypoints": [
     "static/js/runtime-main.f5f8d207.js",
     "static/js/2.d5c40b48.chunk.js",
-    "static/css/main.f43fa9f0.chunk.css",
-    "static/js/main.15854e51.chunk.js"
+    "static/css/main.527ea09b.chunk.css",
+    "static/js/main.75b85145.chunk.js"
   ]
 }
