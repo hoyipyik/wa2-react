@@ -8,9 +8,9 @@ import wa2snow from "../../img/wa2snow.jpg"
 function donate() {
     return (
         <div className="donate">
-            <header>
-                <h3><a href="./index.html">White Album 2</a></h3>
-            </header>
+            {/* <header>
+                <h3><a href="/">White Album 2</a></h3>
+            </header> */}
 
             <section class="start-poster">
                 <img id="start" src={wa2snow} alt="home-poster" width="100%"/>

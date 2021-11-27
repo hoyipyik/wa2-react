@@ -21,9 +21,9 @@ import "./playhouse.css";
 export default function playhouse(props) {
     return (
         <div className="playhouse">
-            <header>
+            {/* <header>
                 <h3><a href="/">White Album 2</a></h3>
-            </header>
+            </header> */}
 
             <section class="start-poster">
                 <img id="start" src={wa2sun} alt="home-poster" width="100%"/>

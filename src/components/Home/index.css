@@ -1,4 +1,4 @@
-*{
+.index *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -184,4 +184,48 @@
     bottom: 7%;
     right: 3%;
     margin: 20px 35px;
+}
+
+
+.index #sub-nav-ul{
+    position: absolute;
+    left: 75%;
+    /* top: 1%; */
+    width: 100%;
+    max-width: 25%;
+    background-color: rgb(237, 242, 245);
+    /* white-space: nowrap; */
+}
+/* 对导航的内容的每个元素进行设定 */
+/* 使用了inline-block可以让他们都在一行上 */
+.index #sub-nav-ul li{
+    display: block;
+    width: 98%;
+    text-align: center;
+    padding: 6px 5px;
+    margin: 6px 4.5px;
+}
+/* 消除a的修饰 */
+.index #sub-nav-ul li a{
+    color: black;
+    text-decoration-line: none;
+    font-size: 28px;
+}
+
+/* .snackBar div{
+    display: inline-block;
+    width: 20%;
+    height: 5%;
+    position: absolute;
+    text-align: center;
+    border: black solid;
+   
+    z-index: 10;
+    left: 20px;
+    top: 20px;
+   
+} */
+
+.index #more:hover{
+    cursor: pointer;
 }

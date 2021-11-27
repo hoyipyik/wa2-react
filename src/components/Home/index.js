@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
-
+import axios from "../../axios"
+import Snackbar from '@material-ui/core/Snackbar'
 import wa2snow  from "../../img/wa2snow.jpg"
+import wa2sun from '../../img/wa2sun.png'
 import setsuna from "../../img/setsuna.png"
 import ending from "../../img/ending.png"
 import thearter from  "../../img/thearter.png"
@@ -11,33 +13,87 @@ import kazusa from "../../img/kazusa.jpeg"
 import "./index.css"
 import "./index2.css"
 
+const Index = (props) => {
+    const [email, setEmail] = useState("")
+    const [focusFlag, setFocusFlag] = useState(false)
+    const [subNavFlag, setSubNavFlag] = useState("More")
+    const [sentFlag, setSentFlag] = useState(false)
 
-const [cssFlag, setCssFlag] = useState(false)
+    useEffect(()=>{
+        if(sentFlag){
+            setTimeout(() => {
+                setSentFlag(false)
+            }, 3000);
+        }
+    }, [sentFlag])
 
-useEffect(() => {
-    if(cssFlag){
-        
-        cssFlag = !cssFlag
+    useEffect(() => {
+        const listener = (event)=>{
+            if (event.code === "Enter" || event.code === "NumpadEnter") {
+                console.log(event.code, "event code")
+                console.log("Enter key was pressed. Run your function.");
+                // window.alert()
+                if(email!==""&focusFlag)
+                axios.post("/subscribeEmailList.json", {email})
+                    .then(res=>{
+                        console.log(res.data, "Subscribe email send")
+                        setSentFlag(true)
+                        setEmail("")
+                    })
+                    .catch(err=>console.log(err))
+                event.preventDefault();
+                setTimeout(() => {
+                    setFocusFlag(false)
+                }, 1000);
+            }
+        }
+        // console.log("key")
+        document.addEventListener("keydown", listener)
+        return () => {
+            document.removeEventListener("keydown", listener)
+        }
+    }, [focusFlag])
+
+    const inputHandler = (event) =>{
+        const {value} = event.target
+        setEmail(value)
+        setFocusFlag(true)
     }
-    else{
-       
-        cssFlag = !cssFlag
-    }
-}, [cssFlag])
+    
 
-const index = (props) => {
+    const subNav = 
+        <ul id="sub-nav-ul">
+            <li>
+                <a class="nonhome" target="_blank" href="https://en.wikipedia.org/wiki/White_Album_2">Wikipedia</a>
+            </li>
+            <li>
+                <a class="nonhome" target="_blank" href="https://www.imdb.com/title/tt2942224/">IMDb</a>
+            </li>
+            <li>
+                <a class="nonhome" href="./donate.html">Donate</a>
+            </li>
+        </ul>
+    
+
+    const subNavHandler = ()=>{
+        if(subNavFlag === "More")
+            setSubNavFlag("Hide")
+        else
+            setSubNavFlag("More")
+    }
+
     return (
-        <div className="index">
+        <div className={props.cssFlag?"index2":"index"}>
 
-            <header>
-                <h3><a href="/">White Album 2</a></h3>
-            </header>
+            {/* <header>
+                <h3><a href="/" >White Album 2</a></h3>
+            </header> */}
 
             <section class="start-poster">
-                <img id="start" src={wa2snow} alt="home-poster" width="100%"/>
+                <img id="start" src={props.cssFlag?wa2sun:wa2snow} alt="home-poster" width="100%"/>
             </section>
 
-            <nav>
+            <nav className='main-nav'>
                 <ul>
                     <li>
                         <a href="/"><b>Home</b></a>
@@ -49,11 +105,13 @@ const index = (props) => {
                         <a class='nonhome' href="./member.html">Member</a>
                     </li>
                     <li>
-                        <a class='nonhome'  href="./donate.html">Donate</a>
+                        <a class='nonhome' id='more' onClick={subNavHandler}>{subNavFlag}</a>
                     </li>
                 </ul>
+                {subNavFlag !=="More"? <nav id="sub-nav">{subNav}</nav>:null}
             </nav>
-
+            
+            {subNavFlag !=="More"? <div><br/><br/></div>:null}
             <main>
                 <article>
                     <section class="intro-paragraph">
@@ -122,7 +180,7 @@ const index = (props) => {
                         </p>
                     </figure>
                     <figure>
-                        <img src={setsuna2} alt="Setsuna Ogiso" height="30%"/>
+                        <img id='middle' className='thin' src={setsuna2} alt="Setsuna Ogiso" height="30%"/>
                         <p><b>Setsuna Ogiso</b></p>
                         <p>
                             Setsuna Ogiso is the first main heroine. 
@@ -140,7 +198,7 @@ const index = (props) => {
                         </p>
                     </figure>
                     <figure>
-                        <img src={kazusa} alt="Kazusa Touma" height="30%"/>
+                        <img className='thin' src={kazusa} alt="Kazusa Touma" height="30%"/>
                         <p><b>Kazusa Touma</b></p>
                         <p>
                             Kazusa Touma is the second main heroine. 
@@ -158,19 +216,6 @@ const index = (props) => {
                     </figure>
                 </section>
 
-                
-
-                {/* <!-- <section class="goal">
-                    <h4>Goals</h4>
-                    <p>We gather here to show our love for White Album 2</p>
-                    <p>
-                        You can watch the video and listen to the music in our playhouse.
-                        <br/>
-                        Also you can choose to donate or become a member to support us, which 
-                        will keep the website working.
-                    </p>
-                </section>  */}
-
                 <section class="slogan">
                     <h2>
                         "再びホワイトアルバムの季節です
@@ -181,7 +226,7 @@ const index = (props) => {
                 <section class="mail-subscribe">
                     <h4>Subscribe</h4>
                     <form>
-                        <input placeholder="Input your email and hit Enter" type="email"/>
+                        <input placeholder="Input your email and hit Enter" type="email" value={email} id='email'  name="email" onChange={inputHandler}/>
                     </form>
                 </section>
 
@@ -194,6 +239,11 @@ const index = (props) => {
                     <img alt="goto-top" src="https://img.icons8.com/ios/50/000000/up-squared.png"/>
                 </a>
             </section>
+            {sentFlag?
+            <section className='snackBar'>
+                <Snackbar open={true} message="Send Success"/>
+            </section>
+            :null}
             
             <footer>
                 <hr/>
@@ -203,4 +253,4 @@ const index = (props) => {
     )
 }
 
-export default index
+export default Index
