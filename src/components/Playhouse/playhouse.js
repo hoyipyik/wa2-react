@@ -20,7 +20,7 @@ import "./playhouse.css";
 
 export default function playhouse(props) {
     return (
-        <div>
+        <div className="playhouse">
             <header>
                 <h3><a href="/">White Album 2</a></h3>
             </header>

@@ -4,54 +4,54 @@
     box-sizing: border-box;
 }
 
-header h3 a{
+.member header h3 a{
     text-decoration-line: none;
     color: black;
 }
 
 
-header{
+.member header{
     max-width: 100%;
     width: 100%;
     height: 60px;
-    z-index: 1; 
+    z-index: 1;
     background-color: azure;
     position: fixed;
     /* background-color: black; */
 }
 
-header h3{
+.member header h3{
     margin: 12px 30px;
     padding: 5px 10px;
     border-radius: 7px;
     border: 3px solid black;
     display: inline-block;
-    
+
 }
 
-section.start-poster{
+.member section.start-poster{
     position: relative;
     top: 60px;
 }
 
-#start{
+.member #start{
     height: 600px;
 }
 
-nav{
+.member nav{
     position: sticky;
     top: 60px;
     z-index: 2;
 
 }
-nav ul{
+.member nav ul{
     width: 100%;
     max-width: 100%;
     background-color: aliceblue;
     white-space: nowrap;
 }
 
-nav li{
+.member nav li{
     display: inline-block;
     width: 24%;
     text-align: center;
@@ -59,41 +59,41 @@ nav li{
     margin: 6px 4.5px;
 }
 
-nav li a{
+.member nav li a{
     color: black;
     text-decoration-line: none;
     font-size: 28px;
 }
 
-.nonhome:hover{
+.member .nonhome:hover{
     font-size: 1.5em;
 }
 
 
-footer{
+.member footer{
     margin: 30px 35px;
 }
 
-footer p{
+.member footer p{
     font-size: 14px;
 }
 
-b{
+.member b{
     font-size: 1.1em;
 }
 
 
 @media screen and (max-width: 1000px) {
-    nav li a{
+    .member nav li a{
         font-size: 20px;
     }
-    nav li{
+    .member nav li{
         padding: 6px 2px;
         margin: 6px 1px;
     }
 }
 
-form{
+.member form{
     z-index: 0;
     margin: 20px 8%;
     padding: 10px 5px;
@@ -103,28 +103,28 @@ form{
     overflow: scroll; */
 }
 
-h4{
+.member h4{
     font-size: 38px;
     margin: 10px 0;
     padding: 10px 0;
 }
 
-table{
+.member table{
     margin: 30px 0;
     padding: 10px 0;
     width: 100%;
 }
-tr{
+.member tr{
     height: 48px;
     margin: 20px 15px;
 }
 
-td{
+.member td{
     margin: 20px 10px;
     font-size: 26px;
 }
 
-thead{
+.member thead{
     background-color: rgba(240, 248, 255, 0.746);
     margin: 30px 30px;
     padding: 20px 20px;
@@ -132,7 +132,7 @@ thead{
     /* display: block; */
 }
 
-input{
+.member input{
     width: 100%;
     height: 40px;
     margin: 30px 0;
@@ -142,7 +142,7 @@ input{
     border: rgba(132, 159, 190, 0.698) solid;
 }
 
-select{
+.member select{
     width: 20%;
     margin: 4px 5px;
     /* border-radius: 1px; */
@@ -151,13 +151,13 @@ select{
 }
 
 
-textarea:focus{
+.member textarea:focus{
     border: rgb(132, 159, 190) dotted;
     outline: none;
 }
 
 
-textarea{
+.member textarea{
     /* margin: 10px 0; */
     border-radius: 5px;
     font-size: 18px;
@@ -167,17 +167,17 @@ textarea{
     /* border:black; */
 }
 
-.textarea td{
+.member .textarea td{
     vertical-align: top;
     margin: 20px 0;
 }
 
-input:focus{
+.member input:focus{
     outline: none;
     border: rgb(132, 159, 190) dotted;
 }
 
-button{
+.member button{
     margin: 20px 0;
     padding: 15px 7px;
     background-color: aliceblue;
@@ -189,10 +189,15 @@ button{
     border-radius: 5px;
 }
 
-footer{
+.member footer{
     margin: 30px 35px;
 }
 
-footer p{
+.member button:hover{
+    background-color: rgb(171, 193, 212);
+    cursor: pointer;
+}
+
+.member footer p{
     font-size: 14px;
 }

@@ -1,12 +1,19 @@
 import React from 'react'
+import { useState } from 'react'
 
 import wa2snow from "../../img/wa2snow.jpg"
 
 import "./member.css"
 
-function member() {
+const Member = (props) => {
+    const [name, setName] = useState()
+    const [username, setUsername] = useState()
+    const [age, setAge] = useState("Under 18")
+    const [email, setEmail] = useState()
+    const [intro, setIntro] = useState()
+
     return (
-        <div>
+        <div className="member">
             <header>
                 <h3><a href="./index.html">White Album 2</a></h3>
             </header>
@@ -80,7 +87,7 @@ function member() {
                         </tr>
                     </tbody>
                 </table>
-                <button onclick="">Submit</button>
+                <button >Submit</button>
             </form>
 
             <footer>
@@ -92,4 +99,4 @@ function member() {
             )
         }
 
-export default member
+export default Member

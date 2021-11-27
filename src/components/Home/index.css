@@ -2,14 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    zoom: 98%;
 }
 
-header h3 a{
+.index header h3 a{
     text-decoration-line: none;
     color: black;
 }
 
-header{
+.index header{
     max-width: 100%;
     width: 100%;
     height: 60px;
@@ -19,7 +20,7 @@ header{
     /* background-color: black; */
 }
 
-header h3{
+.index header h3{
     margin: 12px 30px;
     padding: 5px 10px;
     border-radius: 7px;
@@ -28,28 +29,28 @@ header h3{
     
 }
 
-section.start-poster{
+.index section.start-poster{
     position: relative;
     top: 60px;
 }
 
-#start{
+.index #start{
     height: 600px;
 }
 
-nav{
+.index nav{
     position: sticky;
     top: 60px;
     z-index: 1;
 }
-nav ul{
+.index nav ul{
     width: 100%;
     max-width: 100%;
     background-color: aliceblue;
     white-space: nowrap;
 }
 
-nav li{
+.index nav li{
     display: inline-block;
     width: 24%;
     text-align: center;
@@ -57,95 +58,95 @@ nav li{
     margin: 6px 4.5px;
 }
 
-nav li a{
+.index nav li a{
     color: black;
     text-decoration-line: none;
     font-size: 28px;
 }
 
-.nonhome:hover{
+.index .nonhome:hover{
     font-size: 1.5em;
 }
 
-article{
+.index article{
     margin: 30px 35px;
     padding: 20px 20px;
 }
 
-h4{
+.index h4{
     font-size: 40px;
 }
 
-p{
+.index p{
     margin: 20px 0;
     font-size: 26px;
 }
 
-section.cg{
+.index section.cg{
     margin: 0 35px 55px;
     padding: 0 20px;
 }
 
 
-section figure{
+.index section figure{
     width: 33%;
     display: inline-block;
     vertical-align: top;
 }
 
 @media  screen and (max-width: 1000px) {
-    section.slogan{
+    .index section.slogan{
         font-size: 40px;
     }
-    nav li a{
+    .index nav li a{
         font-size: 20px;
     }
-    nav li{
+    .index nav li{
         padding: 6px 2px;
         margin: 6px 1px;
     }
 
-    section figure{
+    .index section figure{
         width: 60%;
         align-items: center;
         margin: 5px 25%;
         /* margin: 0 auto; */
     }
-    section.characters figure{
+    .index section.characters figure{
         width: 100%;
         align-items: center;
         margin: 0 0;
     }
 }
 
-section figure img{
+.index section figure img{
     height: 250px;
     margin: 10px 5px;
     padding: 10px 5px;
 }
 
-section.characters{
+.index section.characters{
     margin: 20px 35px;
     padding: 0 20px;
 }
 
-.cg-list img:hover{
+.index .cg-list img:hover{
     position: relative;
     top: -10px;
 }
 
-section.slogan{
+.index section.slogan{
     padding: 100px 40px;
     padding: 250px 0;
     text-align: center;
     font-size: 47px;
 }
 
-section.mail-subscribe{
+.index section.mail-subscribe{
     margin: 35px 35px;
 }
 
-.mail-subscribe input{
+.index .mail-subscribe input{
     width: 70%;
     height: 50px;
     padding: 20px 30px;
@@ -155,29 +156,29 @@ section.mail-subscribe{
     font-size: 24px;
 }
 
-.mail-subscribe input:focus{
+.index .mail-subscribe input:focus{
     border: rgba(132, 159, 190, 0.698) dotted;
     outline: none;
 }
 
-footer{
+.index footer{
     margin: 30px 35px;
 }
 
-footer p{
+.index footer p{
     font-size: 14px;
 }
 
-b{
+.index b{
     font-size: 1.1em;
 }
 
-section.goto-top{
+.index section.goto-top{
     position: relative;
 }
 
 
-section.goto-top a{
+.index section.goto-top a{
     position: absolute;
     /* : 2000px; */
     bottom: 7%;

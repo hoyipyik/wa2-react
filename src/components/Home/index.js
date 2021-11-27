@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 import wa2snow  from "../../img/wa2snow.jpg"
 import setsuna from "../../img/setsuna.png"
@@ -8,11 +8,26 @@ import haruki from  "../../img/haruki.jpeg"
 import setsuna2 from "../../img/setsuna.jpeg"
 import kazusa from "../../img/kazusa.jpeg"
 
-import "./index.css";
+import "./index.css"
+import "./index2.css"
+
+
+const [cssFlag, setCssFlag] = useState(false)
+
+useEffect(() => {
+    if(cssFlag){
+        
+        cssFlag = !cssFlag
+    }
+    else{
+       
+        cssFlag = !cssFlag
+    }
+}, [cssFlag])
 
 const index = (props) => {
     return (
-        <div>
+        <div className="index">
 
             <header>
                 <h3><a href="/">White Album 2</a></h3>

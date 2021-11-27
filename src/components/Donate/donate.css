@@ -4,12 +4,12 @@
     box-sizing: border-box;
 }
 
-header h3 a{
+.donate header h3 a{
     text-decoration-line: none;
     color: black;
 }
 
-header{
+.donate header{
     max-width: 100%;
     width: 100%;
     height: 60px;
@@ -19,7 +19,7 @@ header{
     /* background-color: black; */
 }
 
-header h3{
+.donate header h3{
     margin: 12px 30px;
     padding: 5px 10px;
     border-radius: 7px;
@@ -28,28 +28,28 @@ header h3{
     
 }
 
-section.start-poster{
+.donate section.start-poster{
     position: relative;
     top: 60px;
 }
 
-#start{
+.donate #start{
     height: 600px;
 }
 
-nav{
+.donate nav{
     position: sticky;
     top: 60px;
 
 }
-nav ul{
+.donate nav ul{
     width: 100%;
     max-width: 100%;
     background-color: aliceblue;
     white-space: nowrap;
 }
 
-nav li{
+.donate nav li{
     display: inline-block;
     width: 24%;
     text-align: center;
@@ -57,45 +57,45 @@ nav li{
     margin: 6px 4.5px;
 }
 
-nav li a{
+.donate nav li a{
     color: black;
     text-decoration-line: none;
     font-size: 28px;
 }
 
-.nonhome:hover{
+.donate .nonhome:hover{
     font-size: 1.5em;
 }
 
 
 
-footer{
+.donate footer{
     margin: 30px 35px;
 }
 
-footer p{
+.donate footer p{
     font-size: 14px;
 }
 
 @media screen and (max-width: 1000px) {
-    nav li a{
+    .donate nav li a{
         font-size: 20px;
     }
-    nav li{
+    .donate nav li{
         padding: 6px 2px;
         margin: 6px 1px;
     }
 }
 
-b{
+.donate b{
     font-size: 1.1em;
 }
 
-#pay{
+.donate #pay{
     display: flex;
 }
 
-#pay figure{
+.donate #pay figure{
     flex: 1;
     margin: 10px auto;
     padding: 5% 0;

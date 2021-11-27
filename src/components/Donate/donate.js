@@ -7,7 +7,7 @@ import wa2snow from "../../img/wa2snow.jpg"
 
 function donate() {
     return (
-        <div>
+        <div className="donate">
             <header>
                 <h3><a href="./index.html">White Album 2</a></h3>
             </header>
