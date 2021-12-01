@@ -29,23 +29,27 @@ const Index = (props) => {
 
     useEffect(() => {
         const listener = (event)=>{
-            if (event.code === "Enter" || event.code === "NumpadEnter") {
-                console.log(event.code, "event code")
-                console.log("Enter key was pressed. Run your function.");
-                // window.alert()
-                if(email!==""&focusFlag)
-                axios.post("/subscribeEmailList.json", {email})
-                    .then(res=>{
-                        console.log(res.data, "Subscribe email send")
-                        setSentFlag(true)
-                        setEmail("")
-                    })
-                    .catch(err=>console.log(err))
-                event.preventDefault();
-                setTimeout(() => {
-                    setFocusFlag(false)
-                }, 1000);
+            const targetElement = document.getElementById("email")
+            if(document.activeElement === targetElement){
+                if (event.code === "Enter" || event.code === "NumpadEnter") {
+                    console.log(event.code, "event code")
+                    console.log("Enter key was pressed. Run your function.");
+                    // window.alert()
+                    if(email!==""&focusFlag)
+                    axios.post("/subscribeEmailList.json", {email})
+                        .then(res=>{
+                            console.log(res.data, "Subscribe email send")
+                            setSentFlag(true)
+                            setEmail("")
+                        })
+                        .catch(err=>console.log(err))
+                    event.preventDefault();
+                    setTimeout(() => {
+                        setFocusFlag(false)
+                    }, 1000);
+                }
             }
+            
         }
         // console.log("key")
         document.addEventListener("keydown", listener)
