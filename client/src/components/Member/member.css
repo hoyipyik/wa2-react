@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.member header h3 a{
+    text-decoration-line: none;
+    color: black;
+}
+
+
+.member header{
+    max-width: 100%;
+    width: 100%;
+    height: 60px;
+    z-index: 1;
+    background-color: azure;
+    position: fixed;
+    /* background-color: black; */
+}
+
+.member header h3{
+    margin: 12px 30px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 3px solid black;
+    display: inline-block;
+
+}
+
+.member section.start-poster{
+    position: relative;
+    top: 60px;
+}
+
+.member #start{
+    height: 600px;
+}
+
+.member nav{
+    position: sticky;
+    top: 60px;
+    z-index: 2;
+
+}
+.member nav ul{
+    width: 100%;
+    max-width: 100%;
+    background-color: aliceblue;
+    white-space: nowrap;
+}
+
+.member nav li{
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    padding: 6px 5px;
+    margin: 6px 4.5px;
+}
+
+.member nav li a{
+    color: black;
+    text-decoration-line: none;
+    font-size: 28px;
+}
+
+.member .nonhome:hover{
+    font-size: 1.5em;
+}
+
+
+.member footer{
+    margin: 30px 35px;
+}
+
+.member footer p{
+    font-size: 14px;
+}
+
+.member b{
+    font-size: 1.1em;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .member nav li a{
+        font-size: 20px;
+    }
+    .member nav li{
+        padding: 6px 2px;
+        margin: 6px 1px;
+    }
+}
+
+.member form{
+    z-index: 0;
+    margin: 20px 8%;
+    padding: 10px 5px;
+    position: relative;
+    /* width: 100%;
+    height: 600px;
+    overflow: scroll; */
+}
+
+.member h4{
+    font-size: 38px;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+.member table{
+    margin: 30px 0;
+    padding: 10px 0;
+    width: 100%;
+}
+.member tr{
+    height: 48px;
+    margin: 20px 15px;
+}
+
+.member td{
+    margin: 20px 10px;
+    font-size: 26px;
+}
+
+.member thead{
+    background-color: rgba(240, 248, 255, 0.746);
+    margin: 30px 30px;
+    padding: 20px 20px;
+    font-size: 28px;
+    /* display: block; */
+}
+
+.member input{
+    width: 100%;
+    height: 40px;
+    margin: 30px 0;
+    padding: 20px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: rgba(132, 159, 190, 0.698) solid;
+}
+
+.member select{
+    width: 20%;
+    margin: 4px 5px;
+    /* border-radius: 1px; */
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.member textarea:focus{
+    border: rgb(132, 159, 190) dotted;
+    outline: none;
+}
+
+
+.member textarea{
+    /* margin: 10px 0; */
+    border-radius: 5px;
+    font-size: 18px;
+    width: 100%;
+    height: 160px;
+    border: rgba(132, 159, 190, 0.698) solid;
+    /* border:black; */
+}
+
+.member .textarea td{
+    vertical-align: top;
+    margin: 20px 0;
+}
+
+.member input:focus{
+    outline: none;
+    border: rgb(132, 159, 190) dotted;
+}
+
+.member button{
+    margin: 20px 0;
+    padding: 15px 7px;
+    background-color: aliceblue;
+    width: 10%;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px;
+    border-color: rgba(240, 248, 255, 0.829);
+    border-radius: 5px;
+}
+
+.member footer{
+    margin: 30px 35px;
+}
+
+.member button:hover{
+    background-color: rgb(171, 193, 212);
+    cursor: pointer;
+}
+
+.member footer p{
+    font-size: 14px;
+}

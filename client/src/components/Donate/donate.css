@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.donate header h3 a{
+    text-decoration-line: none;
+    color: black;
+}
+
+.donate header{
+    max-width: 100%;
+    width: 100%;
+    height: 60px;
+    z-index: 1; 
+    background-color: azure;
+    position: fixed;
+    /* background-color: black; */
+}
+
+.donate header h3{
+    margin: 12px 30px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 3px solid black;
+    display: inline-block;
+    
+}
+
+.donate section.start-poster{
+    position: relative;
+    top: 60px;
+}
+
+.donate #start{
+    height: 600px;
+}
+
+.donate nav{
+    position: sticky;
+    top: 60px;
+
+}
+.donate nav ul{
+    width: 100%;
+    max-width: 100%;
+    background-color: aliceblue;
+    white-space: nowrap;
+}
+
+.donate nav li{
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    padding: 6px 5px;
+    margin: 6px 4.5px;
+}
+
+.donate nav li a{
+    color: black;
+    text-decoration-line: none;
+    font-size: 28px;
+}
+
+.donate .nonhome:hover{
+    font-size: 1.5em;
+}
+
+
+
+.donate footer{
+    margin: 30px 35px;
+}
+
+.donate footer p{
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1000px) {
+    .donate nav li a{
+        font-size: 20px;
+    }
+    .donate nav li{
+        padding: 6px 2px;
+        margin: 6px 1px;
+    }
+}
+
+.donate b{
+    font-size: 1.1em;
+}
+
+.donate #pay{
+    display: flex;
+}
+
+.donate #pay figure{
+    flex: 1;
+    margin: 10px auto;
+    padding: 5% 0;
+    text-align: center;
+    font-size: 30px;
+    align-items: center;
+    position: relative;
+
+}
+
+/* section{
+    margin: 0 0 10px 0;
+} */
