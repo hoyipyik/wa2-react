@@ -17,7 +17,8 @@ import LogPage from './container/LogPage/LogPage'
 const App = () =>{
     const [cssFlag, setCssFlag] = useState(false)
     const [logPage, setLogPage] = useState(false)
-    const [logged, setLogged] = useState(false)
+    // const [logged, setLogged] = useState(false)
+    const [loggedEmail, setLoggedEmail] = useState(null)
     const [signed, setSigned] = useState(false)
 
     const changeCss = () =>{
@@ -38,6 +39,11 @@ const App = () =>{
       setSigned(name)
     } 
 
+    const logHandler = (item) =>{
+      // setLogged(true)
+      setLoggedEmail(item)
+    }
+
     return (
       <div className='App'>
         <header>
@@ -47,8 +53,10 @@ const App = () =>{
         </header>
         {logPage?
           <LogPage 
+            logHandler={logHandler}
             closeLogPage={closeLogPage} 
             signed={signed}
+            loggedEmail={loggedEmail}
             signedHandler={signedHandler}
           /> : null}
         <Switch>
@@ -61,7 +69,7 @@ const App = () =>{
           {/* <Route path="/member.html"> */}
           <Route path="/board.html">
             {/* <Member/> */}
-            <Board/>
+            <Board loggedEmail={loggedEmail}/>
           </Route>
           <Route path="/donate.html">
             <Donate/>

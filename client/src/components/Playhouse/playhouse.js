@@ -18,8 +18,19 @@ import AfterAll from "../../music/After All～綴る想い～.flac"
 import op from "../../videos/CC Op.mp4"
 
 import "./playhouse.css";
+import axios  from '../../axios'
 
 export default function playhouse(props) {
+
+    const addLike = () =>{
+        const msg = {name: "hyy"}
+        axios.post("/addlike.json", msg)
+            .then(res=>{
+                console.log(res)
+            })
+            .catch(err=>console.log(err))
+    }
+
     return (
         <div className="playhouse">
             {/* <header>
@@ -161,7 +172,7 @@ export default function playhouse(props) {
                 <section className='like-box'>
                     {/* <h4>Share</h4> */}
                     <p>Love it? Click like to support us</p>
-                    <tag><FavoriteIcon color="primary" /></tag>
+                    <tag><FavoriteIcon color="primary"  onClick={addLike}/></tag>
                 </section>
             </main>
 

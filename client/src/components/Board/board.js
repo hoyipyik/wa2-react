@@ -2,12 +2,37 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 
 import wa2snow from "../../img/wa2snow.jpg"
-
+import axios from '../../axios'
 import "./board.css"
 
 const Board = (props) => {
+    const [list, setList] = useState([])
 
-    const table = <div></div>
+    useEffect(()=>{
+        axios.get("/boardList.json")
+            .then(res=>{
+                let data = []
+                // data = [...res.data]
+                setList(data)
+                console.log(data)
+            })
+    }, [])
+
+    const table = list.map((item, index)=>{
+        const {name, email, likes} = item
+        const number = index
+        const row = <tr>
+            <td>{number}</td>
+            <td>{name}</td>
+            <td>{email}</td>
+            <td>{likes}</td>
+        </tr>
+
+        if(email === props.loggedEmail)
+            return <b>{row}</b>
+        else
+            return {row}
+    })
 
     return (
         <div className='board'>
