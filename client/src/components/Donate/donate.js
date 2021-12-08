@@ -19,13 +19,13 @@ function donate() {
             <nav>
                 <ul>
                     <li>
-                        <a class='nonhome' href="./index.html">Home</a>
+                        <a class='nonhome' href="/">Home</a>
                     </li>
                     <li>
                         <a class='nonhome' href="./playhouse.html">Media House</a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./member.html">Member</a>
+                        <a class='nonhome' href="./board.html">Board</a>
                     </li>
                     <li>
                         <a  href="./donate.html"><b>Donate</b></a>

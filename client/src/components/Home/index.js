@@ -106,7 +106,7 @@ const Index = (props) => {
                         <a class='nonhome' href="./playhouse.html">Media House</a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./member.html">Member</a>
+                        <a class='nonhome' href="./board.html">Board</a>
                     </li>
                     <li>
                         <a class='nonhome' id='more' onClick={subNavHandler}>{subNavFlag}</a>

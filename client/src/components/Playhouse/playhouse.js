@@ -4,6 +4,7 @@ import React from 'react'
 import wa2sun from "../../img/wa2sun.png"
 import mv from "../../img/video-icon.png"
 import musicicon from "../../img/music-icon.png"
+import FavoriteIcon from '@mui/icons-material/Favorite'
 
 import 届かない恋 from "../../music/届かない恋.flac"
 import closing from "../../music/closing.flac"
@@ -38,7 +39,7 @@ export default function playhouse(props) {
                         <a href="./playhouse.html"><b>Media House</b></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./member.html">Member</a>
+                        <a class='nonhome' href="./board.html">Board</a>
                     </li>
                     <li>
                         <a class='nonhome'  href="./donate.html">Donate</a>
@@ -156,6 +157,12 @@ export default function playhouse(props) {
                         <img src="https://img.icons8.com/plumpy/48/000000/video.png"/>
                     </a>
                 </section>
+
+                <section className='like-box'>
+                    {/* <h4>Share</h4> */}
+                    <p>Love it? Click like to support us</p>
+                    <tag><FavoriteIcon color="primary" /></tag>
+                </section>
             </main>
 
             <section class="goto-top">
@@ -163,6 +170,8 @@ export default function playhouse(props) {
                     <img src="https://img.icons8.com/ios/50/000000/up-squared.png"/>
                 </a>
             </section>
+
+            
             
             <footer>
                 <hr/>

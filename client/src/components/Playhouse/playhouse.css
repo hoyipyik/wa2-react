@@ -185,3 +185,25 @@
 .playhouse footer p{
     font-size: 14px;
 }
+
+.playhouse .like-box p{
+    font-size: 1.4em;
+    display: inline-block;
+}
+
+.playhouse section.like-box{
+    margin: 20px 0 -10px 0;
+}
+
+.playhouse .like-box tag{
+    margin: 1% 1%;
+    position: relative;
+    top: 7px;
+    zoom: 120%;
+}
+
+.playhouse .like-box tag:hover{
+    cursor: pointer;
+    /* zoom: 90%; */
+}
+

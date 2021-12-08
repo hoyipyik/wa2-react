@@ -1,0 +1,36 @@
+.Login h4{
+    margin: 10px 0;
+    padding: 10px 0;
+    font-size: 40px;
+}
+.Login input{
+    width: 70%;
+    height: 50px;
+    padding: 20px 30px;
+    margin: 25px 0;
+    border: 3px solid rgb(132, 159, 190);
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.Login input:focus{
+    border: rgba(132, 159, 190, 0.698) dotted;
+    outline: none;
+}
+
+.Login button{
+    margin: 20px 0;
+    padding: 15px 7px;
+    background-color: aliceblue;
+    width: 10%;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px;
+    border-color: rgba(240, 248, 255, 0.829);
+    border-radius: 5px;
+}
+
+.Login button:hover{
+    background-color: rgb(171, 193, 212);
+    cursor: pointer;
+}
