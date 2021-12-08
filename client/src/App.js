@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 
 import Home from './components/Home/index'
 import Playhouse from './components/Playhouse/playhouse'
@@ -41,7 +41,7 @@ const App = () =>{
     return (
       <div className='App'>
         <header>
-            <h3><a href="/">White Album 2</a></h3>
+            <h3><Link to='/'><a>White Album 2</a></Link></h3>
             <img onClick={changeCss} id="theme-changer" src={themeIcon}/>
             <tag id='account' onClick={showLogPage}><AccountCircleIcon/></tag>
         </header>

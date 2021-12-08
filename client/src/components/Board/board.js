@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 
 import wa2snow from "../../img/wa2snow.jpg"
 
@@ -17,16 +18,16 @@ const Board = (props) => {
             <nav>
                 <ul>
                     <li>
-                        <a class='nonhome' href="/">Home</a>
+                        <a class='nonhome' href="/"><Link to='/'>Home</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./playhouse.html">Media House</a>
+                        <a class='nonhome' href="./playhouse.html"><Link to='/playhouse.html'>Media House</Link></a>
                     </li>
                     <li>
-                        <a  href="./board.html"><b>Board</b></a>
+                        <a  href="./board.html"><Link to='/board.html'><b>Board</b></Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./donate.html">Donate</a>
+                        <a class='nonhome' href="./donate.html"><Link to='/donate.html'>Donate</Link></a>
                     </li>
                 </ul>
             </nav>

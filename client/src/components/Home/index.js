@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from "react-router-dom"
 import axios from "../../axios"
 import Snackbar from '@material-ui/core/Snackbar'
 import wa2snow  from "../../img/wa2snow.jpg"
@@ -74,7 +75,7 @@ const Index = (props) => {
                 <a class="nonhome" target="_blank" href="https://www.imdb.com/title/tt2942224/">IMDb</a>
             </li>
             <li>
-                <a class="nonhome" href="./donate.html">Donate</a>
+                <Link to='/donate.html'><a class="nonhome" href="./donate.html">Donate</a></Link>
             </li>
         </ul>
     
@@ -100,13 +101,13 @@ const Index = (props) => {
             <nav className='main-nav'>
                 <ul>
                     <li>
-                        <a href="/"><b>Home</b></a>
+                        <a href="/"><Link to='/'><b>Home</b></Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./playhouse.html">Media House</a>
+                        <a class='nonhome' href="./playhouse.html"><Link to='/playhouse.html'>Media House</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./board.html">Board</a>
+                        <a class='nonhome' href="./board.html"><Link to='/board.html'>Board</Link></a>
                     </li>
                     <li>
                         <a class='nonhome' id='more' onClick={subNavHandler}>{subNavFlag}</a>

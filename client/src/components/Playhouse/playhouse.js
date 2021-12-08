@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 import wa2sun from "../../img/wa2sun.png"
 import mv from "../../img/video-icon.png"
@@ -33,16 +33,16 @@ export default function playhouse(props) {
             <nav>
                 <ul>
                     <li>
-                        <a class='nonhome' href="/">Home</a>
+                        <a class='nonhome' href="/"><Link to='/'>Home</Link></a>
                     </li>
                     <li>
-                        <a href="./playhouse.html"><b>Media House</b></a>
+                        <a  href="./playhouse.html"><Link to='/playhouse.html'><b>Media House</b></Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./board.html">Board</a>
+                        <a  class='nonhome' href="./board.html"><Link to='/board.html'>Board</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome'  href="./donate.html">Donate</a>
+                        <a class='nonhome' href="./donate.html"><Link to='/donate.html'>Donate</Link></a>
                     </li>
                 </ul>
             </nav>

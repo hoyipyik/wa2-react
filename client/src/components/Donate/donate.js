@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 import "./donate.css"
 
 import payment from "../../img/payment.png"
@@ -19,16 +19,16 @@ function donate() {
             <nav>
                 <ul>
                     <li>
-                        <a class='nonhome' href="/">Home</a>
+                        <a class='nonhome' href="/"><Link to='/'>Home</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./playhouse.html">Media House</a>
+                        <a class='nonhome' href="./playhouse.html"><Link to='/playhouse.html'>Media House</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./board.html">Board</a>
+                        <a class='nonhome' href="./board.html"><Link to='/board.html'>Board</Link></a>
                     </li>
                     <li>
-                        <a  href="./donate.html"><b>Donate</b></a>
+                        <a  href="./donate.html"><Link to='/donate.html'><b>Donate</b></Link></a>
                     </li>
                 </ul>
             </nav>
