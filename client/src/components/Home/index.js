@@ -19,6 +19,7 @@ const Index = (props) => {
     const [focusFlag, setFocusFlag] = useState(false)
     const [subNavFlag, setSubNavFlag] = useState("More")
     const [sentFlag, setSentFlag] = useState(false)
+    const [snackmsg, setSnackmsg] = useState("")
 
     useEffect(()=>{
         if(sentFlag){
@@ -33,15 +34,22 @@ const Index = (props) => {
             const targetElement = document.getElementById("email")
             if(document.activeElement === targetElement){
                 if (event.code === "Enter" || event.code === "NumpadEnter") {
-                    console.log(event.code, "event code")
-                    console.log("Enter key was pressed. Run your function.");
+                    // console.log(event.code, "event code")
+                    // console.log("Enter key was pressed. Run your function.");
                     // window.alert()
-                    if(email!==""&focusFlag)
+                    if(email!==""&&focusFlag)
                     axios.post("/subscribeEmailList.json", {email})
                         .then(res=>{
-                            console.log(res.data, "Subscribe email send")
+                            // console.log(res.data, "Subscribe email send")
                             setSentFlag(true)
-                            setEmail("")
+                            if(res.data.flag){
+                                setEmail("")
+                                setSnackmsg("Send Success")
+                            }else{
+                                setEmail("")
+                                setSnackmsg("Invaliade email")
+                            }
+                            
                         })
                         .catch(err=>console.log(err))
                     event.preventDefault();
@@ -246,7 +254,7 @@ const Index = (props) => {
             </section>
             {sentFlag?
             <section className='snackBar'>
-                <Snackbar open={true} message="Send Success"/>
+                <Snackbar open={true} message={snackmsg}/>
             </section>
             :null}
             
