@@ -36,6 +36,8 @@ const Index = (props) => {
                 if (event.code === "Enter" || event.code === "NumpadEnter") {
                     console.log(event.code, "event code")
                     console.log("Enter key was pressed. Run your function.");
+                    // console.log(email)
+                    // setTimeout(()=>{}, 1000)
                     // window.alert()
                     if(email!==""&&focusFlag)
                     axios.post("/subscribeEmailList.json", {email})
@@ -47,7 +49,7 @@ const Index = (props) => {
                                 setSnackmsg("Send Success")
                             }else{
                                 setEmail("")
-                                setSnackmsg("Invaliade email")
+                                // setSnackmsg("Invaliade email")
                             }
                             
                         })
