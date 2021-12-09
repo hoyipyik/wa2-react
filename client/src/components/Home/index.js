@@ -34,13 +34,13 @@ const Index = (props) => {
             const targetElement = document.getElementById("email")
             if(document.activeElement === targetElement){
                 if (event.code === "Enter" || event.code === "NumpadEnter") {
-                    // console.log(event.code, "event code")
-                    // console.log("Enter key was pressed. Run your function.");
+                    console.log(event.code, "event code")
+                    console.log("Enter key was pressed. Run your function.");
                     // window.alert()
                     if(email!==""&&focusFlag)
                     axios.post("/subscribeEmailList.json", {email})
                         .then(res=>{
-                            // console.log(res.data, "Subscribe email send")
+                            console.log(res.data, "Subscribe email send")
                             setSentFlag(true)
                             if(res.data.flag){
                                 setEmail("")

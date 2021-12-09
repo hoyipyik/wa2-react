@@ -12,7 +12,7 @@ const LogPage = (props) => {
         <div className='logPage'>
             <div id='logpage'>
               <div className='container'>
-              {props.loggedEmail===""?
+              {props.loggedEmail!==""?
               <div>{ props.signed ?
               
                 <Login logHandler={props.logHandler}/>:
