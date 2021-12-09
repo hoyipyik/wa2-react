@@ -3,18 +3,18 @@ let app = express()
 // app
 // app.use(require('body-parser')())
 // body-parser
-app.set('port', process.env.PORT || 6000)
+app.set('port', process.env.PORT || 4000)
 // port 
 
 app.post("/login.json", (req, res)=>{
     /* mongodb */
-    const backmsg
+    const backmsg = {}
     res.send(backmsg)
 })
 
 app.post("/signup.json", (req, res)=>{
     /* mongodb */
-    const backmsg
+    const backmsg = {}
     res.send(backmsg)
 })
 
