@@ -1,5 +1,9 @@
 let express = require("express")
 let app = express()
+
+var MongoClient = require('mongodb').MongoClient
+
+
 // app
 // app.use(require('body-parser')())
 // body-parser
@@ -19,8 +23,8 @@ app.post("/signup.json", (req, res)=>{
 })
 
 app.post('/subscribeEmailList.json', (req, res)=>{
-    let data = req.body
-    data = Object.values(data) 
+    let rawData = req.body
+    data = Object.values(rawData) 
     const judge = String(data).search("@")
     console.log(judge)
     let flag = false
@@ -29,6 +33,17 @@ app.post('/subscribeEmailList.json', (req, res)=>{
     }else{
         flag = true
         /* Add mongodb here */
+        MongoClient.connect('mongodb://localhost:27017/wa2', function (err, client) {
+        if (err) throw err
+
+        var db = client.db('wa2')
+        db.collection('subscribeList').update(rawData)
+        // db.collection('subscribeList').find().toArray(function (err, result) {
+        //     if (err) throw err
+            
+        //     console.log(result)
+        // })
+    })
     }
 
     const backmsg = {
