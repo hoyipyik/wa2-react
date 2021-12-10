@@ -1,9 +1,9 @@
-const express = require("express")
-const app = express()
+let express = require("express")
+let app = express()
 const url = 'mongodb://localhost:27017/'
 
 // app
-app.use(require('body-parser')())
+app.use(express.json())
 // body-parser
 app.set('port', process.env.PORT || 4000)
 // port 
@@ -18,6 +18,10 @@ app.set('port', process.env.PORT || 4000)
 //     /* mongodb */
 //     const backmsg = {}
 //     res.send(backmsg)
+// })
+// app.post('/subscribeEmailList.json', (req, res)=>{
+//     res.send('Hi')
+//     // console.log(req.body)
 // })
 
 app.post('/subscribeEmailList.json', (req, res)=>{
@@ -49,6 +53,7 @@ app.post('/subscribeEmailList.json', (req, res)=>{
     }
     res.send(backmsg)
     console.log('subscribe email stored', rawData)
+    res.send("Hi")
 })
 
 app.get("/boardList.json", (req, res)=>{
@@ -63,6 +68,7 @@ app.get("/boardList.json", (req, res)=>{
             // console.log(resd)
             newData = [...resd]
             res.send(newData)
+            // res.send("Hi")
             console.log("boardlist sent", newData)
             db.close()
         })
@@ -73,7 +79,7 @@ app.post("/addlike.json", (req, res)=>{
     const frontData = req.body
     const MongoClient = require('mongodb').MongoClient
     MongoClient.connect(url, (err, db)=>{
-        let name = 'aa'
+        let name = ''
         let email = frontData.email
         let likes = 0
         if(err) throw err

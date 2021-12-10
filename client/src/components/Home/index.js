@@ -34,11 +34,12 @@ const Index = (props) => {
             const targetElement = document.getElementById("email")
             if(document.activeElement === targetElement){
                 if (event.code === "Enter" || event.code === "NumpadEnter") {
-                    console.log(event.code, "event code")
+                    // console.log(event.code, "event code")
                     console.log("Enter key was pressed. Run your function.");
                     // console.log(email)
                     // setTimeout(()=>{}, 1000)
                     // window.alert()
+                    console.log(email!==""&&focusFlag, 'hey')
                     if(email!==""&&focusFlag)
                     axios.post("/subscribeEmailList.json", {email})
                         .then(res=>{
@@ -54,6 +55,7 @@ const Index = (props) => {
                             }else{
                                 // setEmail("")1
                                 setSnackmsg("Invaliade email")
+                                // setFocusFlag(false)
                             }
                             
                         })

@@ -21,15 +21,15 @@ import "./playhouse.css";
 import axios  from '../../axios'
 
 export default function Playhouse(props) {
-    const [times, setTimes] = useState(0)
-    const [addflag, setAddflag] = useState(false)
+    // const [times, setTimes] = useState(0)
+    // const [addflag, setAddflag] = useState(false)
 
     // useEffect()
 
     const addLike = () =>{
-        const msg = {email: "s1@bupt.edu", times}
-        setAddflag(true)
-        setTimes(times+1)
+        const msg = {email: "s3@bupt.edu"}
+        // setAddflag(true)
+        // setTimes(times+1)
         console.log('click')
         axios.post("/addlike.json", msg)
             .then(res=>{

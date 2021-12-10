@@ -12,10 +12,11 @@ const Board = (props) => {
         axios.get("/boardList.json")
             .then(res=>{
                 let data = []
-                // console.log(res.data)
+                console.log(res.data)
                 data = [...res.data]
                 setList(data)
             })
+            .catch(err=>console.log(err))
     }, [])
 
     const table = list.map((item, index)=>{
