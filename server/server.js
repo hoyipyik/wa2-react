@@ -52,7 +52,7 @@ app.post('/subscribeEmailList.json', (req, res)=>{
         'flag': flag,
     }
     res.send(backmsg)
-    console.log('subscribe email stored', rawData)
+    // console.log('subscribe email stored', rawData)
     res.send("Hi")
 })
 
@@ -69,13 +69,13 @@ app.get("/boardList.json", (req, res)=>{
             newData = [...resd]
             res.send(newData)
             // res.send("Hi")
-            console.log("boardlist sent", newData)
+            // console.log("boardlist sent", newData)
             db.close()
         })
     })
 })
 
-app.post("/addlike.json", (req, res)=>{
+app.post("/addlike.json", (req, resm)=>{
     const frontData = req.body
     const MongoClient = require('mongodb').MongoClient
     MongoClient.connect(url, (err, db)=>{
@@ -93,7 +93,8 @@ app.post("/addlike.json", (req, res)=>{
             // console.log(email)
             dbo.collection('account').updateOne(frontData, setData, (err3, rep)=>{
                 if(err3) throw err3
-                console.log('like added', name, email, likes)
+                console.log('like added')
+                resm.send(['add'])
             })
         })
     

@@ -21,13 +21,9 @@ import "./playhouse.css";
 import axios  from '../../axios'
 
 export default function Playhouse(props) {
-    // const [times, setTimes] = useState(0)
-    // const [addflag, setAddflag] = useState(false)
-
-    // useEffect()
 
     const addLike = () =>{
-        const msg = {email: "s3@bupt.edu"}
+        const msg = {email: "s2@bupt.edu"}
         // setAddflag(true)
         // setTimes(times+1)
         console.log('click')
