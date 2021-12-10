@@ -39,7 +39,7 @@ const Index = (props) => {
                     // console.log(email)
                     // setTimeout(()=>{}, 1000)
                     // window.alert()
-                    console.log(email!==""&&focusFlag, 'hey')
+                    // console.log(email!==""&&focusFlag, 'hey')
                     if(email!==""&&focusFlag)
                     axios.post("/subscribeEmailList.json", {email})
                         .then(res=>{

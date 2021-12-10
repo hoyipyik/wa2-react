@@ -14,15 +14,39 @@ app.set('port', process.env.PORT || 4000)
 //     res.send(backmsg)
 // })
 
-// app.post("/signup.json", (req, res)=>{
-//     /* mongodb */
-//     const backmsg = {}
-//     res.send(backmsg)
-// })
-// app.post('/subscribeEmailList.json', (req, res)=>{
-//     res.send('Hi')
-//     // console.log(req.body)
-// })
+app.post("/signup.json", (req, resm)=>{
+    /* mongodb */
+    const rawData = req.body
+    const {username, email, text} = rawData
+    const MongoClient = require('mongodb').MongoClient
+    MongoClient.connect(url, (err,db)=>{
+        dbo = db.db('wa2')
+        dbo.collection('account').find().toArray((err, res1)=>{
+            if(err) throw err
+            let flag = true
+            if(String(email).search('@')<0)
+                flag = false
+            for (let index=0; index<res1.length; index++ ){
+                // console.log(i)
+                if(res1[index].name === username || res1[index].email === email){
+                    flag = false
+                    break
+                }
+            }
+            console.log(flag,"flag")
+            resm.send({flag: flag})
+            // resm.send(['Hiiiiiiiiii'])
+            if(flag){
+                const insertData = {name: username, email: email, likes: 0}
+                dbo.collection('account').insertOne(insertData, (err2, res2)=>{
+                    if(err2) throw err2
+                    console.log('sign added', res2)
+                })
+            }
+        })
+    })
+})
+
 
 app.post('/subscribeEmailList.json', (req, res)=>{
     let rawData = req.body
@@ -53,7 +77,7 @@ app.post('/subscribeEmailList.json', (req, res)=>{
     }
     res.send(backmsg)
     // console.log('subscribe email stored', rawData)
-    res.send("Hi")
+    // res.send("Hi")
 })
 
 app.get("/boardList.json", (req, res)=>{

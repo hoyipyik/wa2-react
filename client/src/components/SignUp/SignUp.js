@@ -20,20 +20,23 @@ const SignUp = (props) => {
 
     const signupSubmit = () =>{
         if(username!==""&&email!==""){
+            // console.log('try to submit signup')
             const signupData = {
                 username: username,
                 email: email,
                 text: text,
             }
+            // console.log(signupData)
             axios.post("/signup.json", signupData)
                 .then(res=>{
                     // console.log(res)
-                    const flag = res.data
+                    const {flag} = res.data
+                    console.log(flag, 'flag signup')
                     if(flag){
                         window.alert("success")
                         props.signedHandler(true)
                     }else{
-                        window.alert("email used")
+                        window.alert("email or username used")
                     }
                 })
         }
