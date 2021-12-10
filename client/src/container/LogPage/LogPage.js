@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 import Login from '../../components/Login/Login'
 import SignUp from '../../components/SignUp/SignUp'
@@ -6,18 +6,24 @@ import "../../App.css"
 
 import Backdrop from '@mui/material/Backdrop'
 
+
 const LogPage = (props) => {
+  
     return (
         <div className='App'>
         <div className='logPage'>
             <div id='logpage'>
               <div className='container'>
-              {props.loggedEmail!==""?
+              {!(props.loggedEmail!=="")?
               <div>{ props.signed ?
-              
                 <Login logHandler={props.logHandler}/>:
                 <SignUp signedHandler={props.signedHandler}/>
-              }</div>:<p id="log-info">You have logged as {props.loggedEmail}</p>}
+              }</div>:<div>
+                <p id="log-info">
+                  You have logged as <br/>{props.loggedEmail}
+                </p>
+                <button id='log-out-button' onClick={props.logoutHandler}>Log Out</button>
+                </div>}
                 <div id='log-switch'>
                   <span className='select' name="true" onClick={()=>props.signedHandler(true)}>Login</span>
                   <span id='gap'>{" / "}</span>

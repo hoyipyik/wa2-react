@@ -19,8 +19,8 @@ const Login = (props) => {
             const loginData = {username: username, email: email}
             axios.post("/login.json", loginData)
             .then(res=>{
-                // console.log(res)
-                const flag = res.data
+                console.log(res.data)
+                const {flag} = res.data
                 if(flag){
                     props.logHandler(email)
                     setUsername("")
@@ -38,11 +38,11 @@ const Login = (props) => {
             <h4>Login</h4>
             <div className='group-item'>
                 <p>Username</p>
-                <input class='username-input' name='username' onClick={inputHandler}></input>
+                <input class='username-input' name='username' value={username} onChange={inputHandler}></input>
             </div>
             <div className='group-item'>
                 <p>Email</p>
-                <input name='email' onClick={inputHandler}></input>
+                <input name='email' value={email} onChange={inputHandler}></input>
             </div>
             
             <button onClick={loginSubmit}>Login</button>

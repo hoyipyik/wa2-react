@@ -8,11 +8,32 @@ app.use(express.json())
 app.set('port', process.env.PORT || 4000)
 // port 
 
-// app.post("/login.json", (req, res)=>{
-//     /* mongodb */
-//     const backmsg = {}
-//     res.send(backmsg)
-// })
+app.post("/login.json", (req, resm)=>{
+    /* mongodb */
+    const rawData = req.body
+    const {username, email} = rawData
+    const MongoClient = require('mongodb').MongoClient
+    MongoClient.connect(url, (err,db)=>{
+        dbo = db.db('wa2')
+        dbo.collection('account').find().toArray((err, res1)=>{
+            if(err) throw err
+            let flag = false
+            for (let index=0; index<res1.length; index++ ){
+                // console.log(i)
+                if(res1[index].name === username){
+                    if(res1[index].email === email){
+                        flag = true
+                        break
+                    }
+                    
+                }
+            }
+            console.log(flag,"flag ")
+            resm.send({flag: flag})
+            
+        })
+    })
+})
 
 app.post("/signup.json", (req, resm)=>{
     /* mongodb */
@@ -33,7 +54,7 @@ app.post("/signup.json", (req, resm)=>{
                     break
                 }
             }
-            console.log(flag,"flag")
+            // console.log(flag,"flag")
             resm.send({flag: flag})
             // resm.send(['Hiiiiiiiiii'])
             if(flag){
@@ -113,6 +134,7 @@ app.post("/addlike.json", (req, resm)=>{
             if(err2) throw err2
             name = redata[0].name
             likes = parseInt(redata[0].likes)+1
+            console.log(likes, frontData)
             setData = {$set: {name: name, email: email, likes: likes}}
             // console.log(email)
             dbo.collection('account').updateOne(frontData, setData, (err3, rep)=>{

@@ -47,16 +47,16 @@ const SignUp = (props) => {
             <h4>Sign up</h4>
             <div className='group-item'>
                 <p>Username</p>
-                <input class='username-input' name='username' onClick={signHandler}></input>
+                <input class='username-input' value={username} name='username' onChange={signHandler}></input>
             </div>
             <div className='group-item'>
                 <p>Email</p>
-                <input name='email' onClick={signHandler}></input>
+                <input name='email' value={email} onChange={signHandler}></input>
             </div>
 
             <div className='group-item'>
                 <p>Introduce yourself</p>
-                <textarea name='text' onClick={signHandler}></textarea>
+                <textarea name='text' value={text} onChange={signHandler}></textarea>
             </div>
 
             <button onClick={signupSubmit}>Sign up</button>

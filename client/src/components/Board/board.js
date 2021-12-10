@@ -17,6 +17,18 @@ const Board = (props) => {
                 setList(data)
             })
             .catch(err=>console.log(err))
+    }, [props.loggedEmail])
+
+    useEffect(()=>{
+        axios.get("/boardList.json")
+            .then(res=>{
+                let data = []
+                console.log(res.data)
+                data = [...res.data]
+                setList(data)
+            })
+            .catch(err=>console.log(err))
+        return ()=>console.log('unmount')
     }, [])
 
     const table = list.map((item, index)=>{
@@ -30,7 +42,12 @@ const Board = (props) => {
         </tr>
 
         if(email === props.loggedEmail)
-            return <b>row</b>
+            return <tr key={index}>
+                <td><b>{index}</b></td>
+                <td><b>{name}</b></td>
+                <td><b>{email}</b></td>
+                <td><b>{likes}</b></td>
+            </tr>
         else
             return row
     })

@@ -40,7 +40,7 @@
 .board nav{
     position: sticky;
     top: 60px;
-
+    z-index: 2;
 }
 .board nav ul{
     width: 100%;
@@ -120,6 +120,18 @@
 }
 
 .board td{
+    
+    margin: 20px 10px;
+    font-size: 26px;
+}
+
+.board b tr{
+    height: 48px;
+    text-align: center;
+    margin: 20px 15px;
+}
+
+.board b td{
     
     margin: 20px 10px;
     font-size: 26px;

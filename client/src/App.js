@@ -18,7 +18,7 @@ const App = () =>{
     const [cssFlag, setCssFlag] = useState(false)
     const [logPage, setLogPage] = useState(false)
     // const [logged, setLogged] = useState(false)
-    const [loggedEmail, setLoggedEmail] = useState(null)
+    const [loggedEmail, setLoggedEmail] = useState('')
     const [signed, setSigned] = useState(false)
 
     const changeCss = () =>{
@@ -44,6 +44,10 @@ const App = () =>{
       setLoggedEmail(item)
     }
 
+    const logoutHandler =()=>{
+      setLoggedEmail('')
+    }
+
     return (
       <div className='App'>
         <header>
@@ -53,6 +57,7 @@ const App = () =>{
         </header>
         {logPage?
           <LogPage 
+            logoutHandler={logoutHandler}
             logHandler={logHandler}
             closeLogPage={closeLogPage} 
             signed={signed}
@@ -64,7 +69,7 @@ const App = () =>{
             <Home cssFlag={cssFlag}/>
           </Route>
           <Route path="/playhouse.html">
-            <Playhouse/>
+            <Playhouse loggedEmail={loggedEmail}/>
           </Route>
           {/* <Route path="/member.html"> */}
           <Route path="/board.html">

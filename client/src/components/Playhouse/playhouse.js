@@ -23,7 +23,7 @@ import axios  from '../../axios'
 export default function Playhouse(props) {
 
     const addLike = () =>{
-        const msg = {email: "s2@bupt.edu"}
+        const msg = {email: props.loggedEmail}
         // setAddflag(true)
         // setTimes(times+1)
         console.log('click')
