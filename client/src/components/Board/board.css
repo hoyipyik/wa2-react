@@ -115,10 +115,12 @@
 }
 .board tr{
     height: 48px;
+    text-align: center;
     margin: 20px 15px;
 }
 
 .board td{
+    
     margin: 20px 10px;
     font-size: 26px;
 }

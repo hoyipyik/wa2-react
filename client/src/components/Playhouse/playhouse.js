@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 
 import wa2sun from "../../img/wa2sun.png"
@@ -20,10 +20,17 @@ import op from "../../videos/CC Op.mp4"
 import "./playhouse.css";
 import axios  from '../../axios'
 
-export default function playhouse(props) {
+export default function Playhouse(props) {
+    const [times, setTimes] = useState(0)
+    const [addflag, setAddflag] = useState(false)
+
+    // useEffect()
 
     const addLike = () =>{
-        const msg = {name: "hyy"}
+        const msg = {email: "s1@bupt.edu", times}
+        setAddflag(true)
+        setTimes(times+1)
+        console.log('click')
         axios.post("/addlike.json", msg)
             .then(res=>{
                 console.log(res)
@@ -181,8 +188,6 @@ export default function playhouse(props) {
                     <img src="https://img.icons8.com/ios/50/000000/up-squared.png"/>
                 </a>
             </section>
-
-            
             
             <footer>
                 <hr/>

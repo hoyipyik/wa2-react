@@ -47,17 +47,19 @@ const Index = (props) => {
                             if(res.data.flag){
                                 setEmail("")
                                 setSnackmsg("Send Success")
+                                // setTimeout(() => {
+                                //     setFocusFlag(false)
+                                // }, 1000)
+                                setFocusFlag(false)
                             }else{
-                                setEmail("")
-                                // setSnackmsg("Invaliade email")
+                                // setEmail("")1
+                                setSnackmsg("Invaliade email")
                             }
                             
                         })
                         .catch(err=>console.log(err))
-                    event.preventDefault();
-                    setTimeout(() => {
-                        setFocusFlag(false)
-                    }, 1000);
+                    event.preventDefault()
+                    
                 }
             }
             
@@ -67,7 +69,7 @@ const Index = (props) => {
         return () => {
             document.removeEventListener("keydown", listener)
         }
-    }, [focusFlag])
+    }, )
 
     const inputHandler = (event) =>{
         const {value} = event.target

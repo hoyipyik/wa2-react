@@ -12,26 +12,26 @@ const Board = (props) => {
         axios.get("/boardList.json")
             .then(res=>{
                 let data = []
-                // data = [...res.data]
+                // console.log(res.data)
+                data = [...res.data]
                 setList(data)
-                console.log(data)
             })
     }, [])
 
     const table = list.map((item, index)=>{
         const {name, email, likes} = item
-        const number = index
-        const row = <tr>
-            <td>{number}</td>
+        // console.log(name, email, likes, "Hiii")
+        const row = <tr key={index}>
+            <td>{index}</td>
             <td>{name}</td>
             <td>{email}</td>
             <td>{likes}</td>
         </tr>
 
         if(email === props.loggedEmail)
-            return <b>{row}</b>
+            return <b>row</b>
         else
-            return {row}
+            return row
     })
 
     return (
