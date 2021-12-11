@@ -34,9 +34,8 @@ const App = () =>{
     }
 
     const signedHandler = (e) =>{
-      const name = e
       // console.log(name)
-      setSigned(name)
+      setSigned(e)
     } 
 
     const logHandler = (item) =>{
@@ -72,6 +71,7 @@ const App = () =>{
             <Playhouse loggedEmail={loggedEmail}/>
           </Route>
           {/* <Route path="/member.html"> */}
+          
           <Route path="/board.html">
             {/* <Member/> */}
             <Board loggedEmail={loggedEmail}/>

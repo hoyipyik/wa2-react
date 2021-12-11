@@ -6,13 +6,14 @@ import wa2snow  from "../../img/wa2snow.jpg"
 import wa2sun from '../../img/wa2sun.png'
 import setsuna from "../../img/setsuna.png"
 import ending from "../../img/ending.png"
-import thearter from  "../../img/thearter.png"
+import theatre from  "../../img/thearter.png"
 import haruki from  "../../img/haruki.jpeg"
 import setsuna2 from "../../img/setsuna.jpeg"
 import kazusa from "../../img/kazusa.jpeg"
 
 import "./index.css"
 import "./index2.css"
+
 
 const Index = (props) => {
     const [email, setEmail] = useState("")
@@ -173,7 +174,7 @@ const Index = (props) => {
                             <img src={ending} alt="coda-cg" width="100%"/>
                         </figure>
                         <figure>
-                            <img src={thearter} alt="waki-cg" width="100%"/>
+                            <img src={theatre} alt="waki-cg" width="100%"/>
                         </figure>
                     </div>
                 

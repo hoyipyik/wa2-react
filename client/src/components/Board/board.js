@@ -35,7 +35,7 @@ const Board = (props) => {
         const {name, email, likes} = item
         // console.log(name, email, likes, "Hiii")
         const row = <tr key={index}>
-            <td>{index}</td>
+            <td>{index+1}</td>
             <td>{name}</td>
             <td>{email}</td>
             <td>{likes}</td>
@@ -43,7 +43,7 @@ const Board = (props) => {
 
         if(email === props.loggedEmail)
             return <tr key={index}>
-                <td><b>{index}</b></td>
+                <td><b>{index+1}</b></td>
                 <td><b>{name}</b></td>
                 <td><b>{email}</b></td>
                 <td><b>{likes}</b></td>
