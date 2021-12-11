@@ -52,7 +52,7 @@ const App = () =>{
       <div className='App'>
         <header>
             <h3><Link to='/'><a>White Album 2</a></Link></h3>
-            <img onClick={changeCss} id="theme-changer" src={themeIcon}/>
+            <img alt='theme-changer' onClick={changeCss} id="theme-changer" src={themeIcon}/>
             <tag id='account' onClick={showLogPage}><AccountCircleIcon/></tag>
         </header>
         {logPage?

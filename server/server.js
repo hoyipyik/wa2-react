@@ -30,7 +30,7 @@ app.post("/login.json", (req, resm)=>{
             }
             console.log(flag,"flag ")
             resm.send({flag: flag})
-            
+            db.close()
         })
     })
 })
@@ -62,6 +62,7 @@ app.post("/signup.json", (req, resm)=>{
                 dbo.collection('account').insertOne(insertData, (err2, res2)=>{
                     if(err2) throw err2
                     console.log('sign added', res2)
+                    db.close()
                 })
             }
         })
@@ -141,6 +142,7 @@ app.post("/addlike.json", (req, resm)=>{
                 if(err3) throw err3
                 console.log('like added')
                 resm.send(['add'])
+                db.close()
             })
         })
     
@@ -153,4 +155,4 @@ app.listen(app.get('port'), ()=>{
      app.get("port") +
       "; \npress Ctrl - C to terminate....")
 })
-// listen, listen the port 
+// listen, listen the port
