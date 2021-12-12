@@ -41,7 +41,7 @@ const Index = (props) => {
                     // window.alert()
                     // console.log(email!==""&&focusFlag, 'hey')
                     if(email!==""&&focusFlag)
-                    axios.post("/subscribeEmailList.json", {email})
+                    axios.post("/subscribeEmailList", {email})
                         .then(res=>{
                             console.log(res.data, "Subscribe email send")
                             setSentFlag(true)
@@ -89,7 +89,7 @@ const Index = (props) => {
                 <a class="nonhome" target="_blank" href="https://www.imdb.com/title/tt2942224/">IMDb</a>
             </li>
             <li>
-                <Link to='/donate.html'><a class="nonhome" href="./donate.html">Donate</a></Link>
+                <Link to='/donate'><a class="nonhome" href="./donate">Donate</a></Link>
             </li>
         </ul>
     
@@ -118,10 +118,10 @@ const Index = (props) => {
                         <a href="/"><Link to='/'><b>Home</b></Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./playhouse.html"><Link to='/playhouse.html'>Media House</Link></a>
+                        <a class='nonhome' href="./playhouse"><Link to='/playhouse'>Media House</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./board.html"><Link to='/board.html'>Board</Link></a>
+                        <a class='nonhome' href="./board"><Link to='/board'>Board</Link></a>
                     </li>
                     <li>
                         <a class='nonhome' id='more' onClick={subNavHandler}>{subNavFlag}</a>

@@ -9,7 +9,7 @@ const Board = (props) => {
     const [list, setList] = useState([])
 
     useEffect(()=>{
-        axios.get("/boardList.json")
+        axios.get("/boardList")
             .then(res=>{
                 let data = []
                 console.log(res.data)
@@ -20,7 +20,7 @@ const Board = (props) => {
     }, [props.loggedEmail])
 
     useEffect(()=>{
-        axios.get("/boardList.json")
+        axios.get("/boardList")
             .then(res=>{
                 let data = []
                 console.log(res.data)
@@ -35,7 +35,7 @@ const Board = (props) => {
         const {name, email, likes} = item
         // console.log(name, email, likes, "Hiii")
         const row = <tr key={index}>
-            <td>{index}</td>
+            <td>{index+1}</td>
             <td>{name}</td>
             <td>{email}</td>
             <td>{likes}</td>
@@ -43,7 +43,7 @@ const Board = (props) => {
 
         if(email === props.loggedEmail)
             return <tr key={index}>
-                <td><b>{index}</b></td>
+                <td><b>{index+1}</b></td>
                 <td><b>{name}</b></td>
                 <td><b>{email}</b></td>
                 <td><b>{likes}</b></td>
@@ -64,13 +64,13 @@ const Board = (props) => {
                         <a class='nonhome' href="/"><Link to='/'>Home</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./playhouse.html"><Link to='/playhouse.html'>Media House</Link></a>
+                        <a class='nonhome' href="./playhouse"><Link to='/playhouse'>Media House</Link></a>
                     </li>
                     <li>
-                        <a  href="./board.html"><Link to='/board.html'><b>Board</b></Link></a>
+                        <a  href="./board"><Link to='/board'><b>Board</b></Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./donate.html"><Link to='/donate.html'>Donate</Link></a>
+                        <a class='nonhome' href="./donate"><Link to='/donate'>Donate</Link></a>
                     </li>
                 </ul>
             </nav>

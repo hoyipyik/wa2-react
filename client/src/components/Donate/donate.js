@@ -22,13 +22,13 @@ function donate() {
                         <a class='nonhome' href="/"><Link to='/'>Home</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./playhouse.html"><Link to='/playhouse.html'>Media House</Link></a>
+                        <a class='nonhome' href="./playhouse"><Link to='/playhouse'>Media House</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./board.html"><Link to='/board.html'>Board</Link></a>
+                        <a class='nonhome' href="./board"><Link to='/board'>Board</Link></a>
                     </li>
                     <li>
-                        <a  href="./donate.html"><Link to='/donate.html'><b>Donate</b></Link></a>
+                        <a  href="./donate"><Link to='/donate'><b>Donate</b></Link></a>
                     </li>
                 </ul>
             </nav>

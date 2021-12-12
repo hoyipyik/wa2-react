@@ -17,7 +17,7 @@ const Login = (props) => {
     const loginSubmit = () =>{
         if(username!==""&&email!==""){
             const loginData = {username: username, email: email}
-            axios.post("/login.json", loginData)
+            axios.post("/login", loginData)
             .then(res=>{
                 console.log(res.data)
                 const {flag} = res.data

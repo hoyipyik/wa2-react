@@ -27,7 +27,7 @@ const SignUp = (props) => {
                 text: text,
             }
             // console.log(signupData)
-            axios.post("/signup.json", signupData)
+            axios.post("/signup", signupData)
                 .then(res=>{
                     // console.log(res)
                     const {flag} = res.data
@@ -36,7 +36,7 @@ const SignUp = (props) => {
                         window.alert("success")
                         props.signedHandler(true)
                     }else{
-                        window.alert("email or username used")
+                        window.alert("email error(or used)  or username use")
                     }
                 })
         }

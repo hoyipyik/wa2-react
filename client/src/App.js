@@ -68,15 +68,15 @@ const App = () =>{
           <Route path="/" exact>
             <Home cssFlag={cssFlag}/>
           </Route>
-          <Route path="/playhouse.html">
+          <Route path="/playhouse">
             <Playhouse loggedEmail={loggedEmail}/>
           </Route>
-          {/* <Route path="/member.html"> */}
-          <Route path="/board.html">
+          {/* <Route path="/member"> */}
+          <Route path="/board">
             {/* <Member/> */}
             <Board loggedEmail={loggedEmail}/>
           </Route>
-          <Route path="/donate.html">
+          <Route path="/donate">
             <Donate/>
           </Route>
         </Switch>
