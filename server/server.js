@@ -6,9 +6,16 @@ const url = 'mongodb://localhost:27017/'
 app.use(express.json())
 // body-parser
 app.set('port', process.env.PORT || 4000)
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 // port 
 
-app.post("/login.json", (req, resm)=>{
+app.post("/login", (req, resm)=>{
+    resm.set('Access-Control-Allow-Origin', '*')
     /* mongodb */
     const rawData = req.body
     const {username, email} = rawData
@@ -35,7 +42,8 @@ app.post("/login.json", (req, resm)=>{
     })
 })
 
-app.post("/signup.json", (req, resm)=>{
+app.post("/signup", (req, resm)=>{
+    resm.set('Access-Control-Allow-Origin', '*')
     /* mongodb */
     const rawData = req.body
     const {username, email} = rawData
@@ -70,7 +78,8 @@ app.post("/signup.json", (req, resm)=>{
 })
 
 
-app.post('/subscribeEmailList.json', (req, res)=>{
+app.post('/subscribeEmailList', (req, res)=>{
+    res.set('Access-Control-Allow-Origin', '*')
     let rawData = req.body
     let data = rawData.email
     const judge = String(data).search("@")
@@ -102,7 +111,8 @@ app.post('/subscribeEmailList.json', (req, res)=>{
     // res.send("Hi")
 })
 
-app.get("/boardList.json", (req, res)=>{
+app.get("/boardList", (req, res)=>{
+    res.set('Access-Control-Allow-Origin', '*')
     /* mongo  {} */
     const MongoClient = require('mongodb').MongoClient
     MongoClient.connect(url, (err, db)=>{
@@ -121,7 +131,8 @@ app.get("/boardList.json", (req, res)=>{
     })
 })
 
-app.post("/addlike.json", (req, resm)=>{
+app.post("/addlike", (req, resm)=>{
+    resm.set('Access-Control-Allow-Origin', '*')
     const frontData = req.body
     const MongoClient = require('mongodb').MongoClient
     MongoClient.connect(url, (err, db)=>{

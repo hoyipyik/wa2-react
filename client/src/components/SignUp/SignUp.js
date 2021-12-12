@@ -27,7 +27,7 @@ const SignUp = (props) => {
                 text: text,
             }
             // console.log(signupData)
-            axios.post("/signup.json", signupData)
+            axios.post("/signup", signupData)
                 .then(res=>{
                     // console.log(res)
                     const {flag} = res.data

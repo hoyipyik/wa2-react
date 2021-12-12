@@ -27,7 +27,7 @@ export default function Playhouse(props) {
         // setAddflag(true)
         // setTimes(times+1)
         console.log('click')
-        axios.post("/addlike.json", msg)
+        axios.post("/addlike", msg)
             .then(res=>{
                 console.log(res)
             })
