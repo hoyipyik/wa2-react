@@ -21,7 +21,7 @@ app.post("/login", (req, resm)=>{
     const {username, email} = rawData
     const MongoClient = require('mongodb').MongoClient
     MongoClient.connect(url, (err,db)=>{
-        dbo = db.db('wa2')
+        let dbo = db.db('wa2')
         dbo.collection('account').find().toArray((err, res1)=>{
             if(err) throw err
             let flag = false
@@ -37,7 +37,7 @@ app.post("/login", (req, resm)=>{
             }
             console.log(flag,"flag ")
             resm.send({flag: flag})
-            
+            db.close()
         })
     })
 })
@@ -46,10 +46,10 @@ app.post("/signup", (req, resm)=>{
     resm.set('Access-Control-Allow-Origin', '*')
     /* mongodb */
     const rawData = req.body
-    const {username, email, text} = rawData
+    const {username, email} = rawData
     const MongoClient = require('mongodb').MongoClient
     MongoClient.connect(url, (err,db)=>{
-        dbo = db.db('wa2')
+        let dbo = db.db('wa2')
         dbo.collection('account').find().toArray((err, res1)=>{
             if(err) throw err
             let flag = true
@@ -70,6 +70,7 @@ app.post("/signup", (req, resm)=>{
                 dbo.collection('account').insertOne(insertData, (err2, res2)=>{
                     if(err2) throw err2
                     console.log('sign added', res2)
+                    db.close()
                 })
             }
         })
@@ -80,11 +81,11 @@ app.post("/signup", (req, resm)=>{
 app.post('/subscribeEmailList', (req, res)=>{
     res.set('Access-Control-Allow-Origin', '*')
     let rawData = req.body
-    data = rawData.email
+    let data = rawData.email
     const judge = String(data).search("@")
     console.log(judge)
-    let flag = false
-    if(parseInt(judge)<0){
+    let flag
+    if(judge<0){
         flag = false
     }else{
         flag = true
@@ -116,12 +117,12 @@ app.get("/boardList", (req, res)=>{
     const MongoClient = require('mongodb').MongoClient
     MongoClient.connect(url, (err, db)=>{
         if(err) throw err
-        dbo = db.db('wa2')
+        let dbo = db.db('wa2')
         dbo.collection('account').find().sort({'likes': -1}).toArray((err, resd)=>{
             if(err) throw err
             // const data = []
             // console.log(resd)
-            newData = [...resd]
+            let newData = [...resd]
             res.send(newData)
             // res.send("Hi")
             // console.log("boardlist sent", newData)
@@ -139,19 +140,20 @@ app.post("/addlike", (req, resm)=>{
         let email = frontData.email
         let likes = 0
         if(err) throw err
-        dbo = db.db('wa2')
+        let dbo = db.db('wa2')
         dbo.collection('account').find(frontData).toArray((err2, redata)=>{
             // console.log(redata)
             if(err2) throw err2
             name = redata[0].name
             likes = parseInt(redata[0].likes)+1
             console.log(likes, frontData)
-            setData = {$set: {name: name, email: email, likes: likes}}
+            let setData = {$set: {name: name, email: email, likes: likes}}
             // console.log(email)
-            dbo.collection('account').updateOne(frontData, setData, (err3, rep)=>{
+            dbo.collection('account').updateOne(frontData, setData, (err3)=>{
                 if(err3) throw err3
                 console.log('like added')
                 resm.send(['add'])
+                db.close()
             })
         })
     
@@ -164,4 +166,4 @@ app.listen(app.get('port'), ()=>{
      app.get("port") +
       "; \npress Ctrl - C to terminate....")
 })
-// listen, listen the port 
+// listen, listen the port

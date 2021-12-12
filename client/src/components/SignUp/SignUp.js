@@ -36,7 +36,7 @@ const SignUp = (props) => {
                         window.alert("success")
                         props.signedHandler(true)
                     }else{
-                        window.alert("email error(or used)  or username use")
+                        window.alert("email error(or used) or username used")
                     }
                 })
         }
