@@ -50,13 +50,13 @@ export default function Playhouse(props) {
                         <a class='nonhome' href="/"><Link to='/'>Home</Link></a>
                     </li>
                     <li>
-                        <a  href="./playhouse.html"><Link to='/playhouse.html'><b>Media House</b></Link></a>
+                        <a  href="./playhouse"><Link to='/playhouse'><b>Media House</b></Link></a>
                     </li>
                     <li>
-                        <a  class='nonhome' href="./board.html"><Link to='/board.html'>Board</Link></a>
+                        <a  class='nonhome' href="./board"><Link to='/board'>Board</Link></a>
                     </li>
                     <li>
-                        <a class='nonhome' href="./donate.html"><Link to='/donate.html'>Donate</Link></a>
+                        <a class='nonhome' href="./donate"><Link to='/donate'>Donate</Link></a>
                     </li>
                 </ul>
             </nav>
