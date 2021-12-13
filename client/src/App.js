@@ -68,11 +68,13 @@ const App = () =>{
             <Home cssFlag={cssFlag}/>
           </Route>
           <Route path="/playhouse">
-            <Playhouse loggedEmail={loggedEmail}/>
+            <Playhouse 
+              cssFlag={cssFlag}
+              loggedEmail={loggedEmail}/>
           </Route>
           {/* <Route path="/member.html"> */}
           
-          <Route path="/board.html">
+          <Route path="/board">
             {/* <Member/> */}
             <Board loggedEmail={loggedEmail}/>
           </Route>
