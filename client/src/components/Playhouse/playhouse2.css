@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.playhouse2 header h3 a{
+    text-decoration-line: none;
+    color: black;
+}
+
+.playhouse2 header{
+    max-width: 100%;
+    width: 100%;
+    height: 60px;
+    z-index: 1; 
+    background-color: azure;
+    position: fixed;
+    /* background-color: black; */
+}
+
+.playhouse2 header h3{
+    margin: 12px 30px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 3px solid black;
+    display: inline-block;
+    
+}
+
+.playhouse2 section.start-poster{
+    position: relative;
+    top: 60px;
+}
+
+.playhouse2 #start{
+    height: 600px;
+}
+
+.playhouse2 nav{
+    position: sticky;
+    top: 60px;
+    z-index: 2;
+}
+.playhouse2 nav ul{
+    width: 100%;
+    max-width: 100%;
+    background-color: aliceblue;
+    white-space: nowrap;
+}
+
+.playhouse2 nav li{
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    padding: 6px 5px;
+    margin: 6px 4.5px;
+}
+
+.playhouse2 nav li a{
+    color: black;
+    text-decoration-line: none;
+    font-size: 28px;
+}
+
+.playhouse2 .nonhome:hover{
+    font-size: 1.5em;
+}
+
+.playhouse2 section.contents{
+    margin: 130px 10% 50px;
+    white-space: nowrap;
+}
+
+.playhouse2 section.contents div{
+    display: inline-block;
+    width: 49%;
+    margin: 20px 10px;
+    padding: 50px 10px;
+
+    /* font-weight: bold; */
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow: 3px 3px 3px 2px rgba(132, 159, 190, 0.698);
+}
+
+.playhouse2 a{
+    text-decoration-line: none;
+    color: rgb(64, 80, 134);
+}
+
+.playhouse2 audio{
+    outline: none;
+    width: 100%;
+}
+
+.playhouse2 main{
+    margin: 20px 70px;
+    padding: 10px 5px;
+    position: relative;
+}
+
+.playhouse2 h4{
+    margin: 10px 0;
+    padding: 10px 0;
+    font-size: 40px;
+    text-align: center;
+    font-style: italic;
+}
+
+.playhouse2 section.music .row{
+    margin: 10px 0;
+}
+
+.playhouse2 section.music .row figure{
+    width: 31.8%;
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+.playhouse2 figure figcaption{
+    margin: 8px 0;
+    text-align: center;
+}
+
+.playhouse2 section.mv{
+    margin: 70px 0;
+    position: relative;
+}
+
+.playhouse2 #intromv{
+    font-size: 34px;
+    text-align: left;
+    position: absolute;
+    right: 1%;
+    top: 45%;
+}
+
+@media screen and (max-width: 1000px) {
+    .playhouse2 nav li a{
+        font-size: 20px;
+    }
+    .playhouse2 nav li{
+        padding: 6px 2px;
+        margin: 6px 1px;
+    }
+
+    .playhouse2 video{
+        width: 100%;
+    }
+}
+
+@media  screen and (max-width: 1100px) {
+    .playhouse2 section.music .row figure{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .playhouse2 #intromv{
+        font-size: 27px;
+        text-align: left;
+        position: relative;
+        margin: 10px 10px;
+    }
+}
+
+.playhouse2 section.goto-top{
+    position: relative;
+}
+
+
+.playhouse2 section.goto-top a{
+    position: absolute;
+    /* : 2000px; */
+    bottom: 7%;
+    right: 3%;
+    margin: 20px 35px;
+}
+
+.playhouse2 footer{
+    margin: 30px 35px;
+}
+
+.playhouse2 footer p{
+    font-size: 14px;
+}
+
+.playhouse2 .like-box p{
+    font-size: 1.4em;
+    font-style: italic;
+    display: inline-block;
+}
+
+.playhouse2 section.like-box{
+    margin: 20px 0 -10px 0;
+}
+
+.playhouse2 .like-box tag{
+    margin: 1% 1%;
+    position: relative;
+    top: 7px;
+    zoom: 120%;
+}
+
+.playhouse2 .like-box tag:hover{
+    cursor: pointer;
+    /* zoom: 90%; */
+}
+

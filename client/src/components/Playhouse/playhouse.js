@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 
 import wa2sun from "../../img/wa2sun.png"
+import wa2snow  from "../../img/wa2snow.jpg"
 import mv from "../../img/video-icon.png"
 import musicicon from "../../img/music-icon.png"
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -18,6 +19,7 @@ import AfterAll from "../../music/After All～綴る想い～.flac"
 import op from "../../videos/CC Op.mp4"
 
 import "./playhouse.css";
+import './playhouse2.css'
 import axios  from '../../axios'
 
 export default function Playhouse(props) {
@@ -35,13 +37,13 @@ export default function Playhouse(props) {
     }
 
     return (
-        <div className="playhouse">
+        <div className={props.cssFlag?'playhouse2':"playhouse"}>
             {/* <header>
                 <h3><a href="/">White Album 2</a></h3>
             </header> */}
 
             <section class="start-poster">
-                <img id="start" src={wa2sun} alt="home-poster" width="100%"/>
+                <img id="start" src={props.cssFlag?wa2snow:wa2sun} alt="home-poster" width="100%"/>
             </section>
 
             <nav>
