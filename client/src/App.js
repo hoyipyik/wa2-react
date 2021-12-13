@@ -1,52 +1,60 @@
 import React, { useState } from 'react'
 import { Route, Switch, Link } from 'react-router-dom'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 import Home from './components/Home/index'
 import Playhouse from './components/Playhouse/playhouse'
-
-// import Member from './components/Member/member'
 import Board from './components/Board/board'
 import Donate from './components/Donate/donate'
+import LogPage from './container/LogPage/LogPage'
 import themeIcon from './img/theme-icon.png'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 import "./App.css"
-import LogPage from './container/LogPage/LogPage'
-
 
 const App = () =>{
+    // react useState Hooks 
+    // cssFlag是更换主题的变量
     const [cssFlag, setCssFlag] = useState(false)
+    //账户界面
     const [logPage, setLogPage] = useState(false)
-    // const [logged, setLogged] = useState(false)
+    //登录用户的邮箱
     const [loggedEmail, setLoggedEmail] = useState('')
+    //注册标示
     const [signed, setSigned] = useState(false)
 
+    //更改主题函数
     const changeCss = () =>{
       setCssFlag(!cssFlag)
     }
 
+    //开启账户页面
     const showLogPage = ()=>{
       setLogPage(true)
     }
 
+    //关闭账户页面
     const closeLogPage = () =>{
       setLogPage(false)
     }
 
+    //注册函数状态改变
     const signedHandler = (e) =>{
-      // console.log(name)
       setSigned(e)
     } 
 
+    //登录函数状态改变
     const logHandler = (item) =>{
-      // setLogged(true)
       setLoggedEmail(item)
     }
 
+    //登出函数, 改变状态
     const logoutHandler =()=>{
       setLoggedEmail('')
     }
 
+    /**
+     * 
+     */
     return (
       <div className='App'>
         <header>
@@ -68,12 +76,12 @@ const App = () =>{
             <Home cssFlag={cssFlag}/>
           </Route>
           <Route path="/playhouse">
-            <Playhouse loggedEmail={loggedEmail}/>
+            <Playhouse 
+              cssFlag={cssFlag}
+              loggedEmail={loggedEmail}/>
           </Route>
-          {/* <Route path="/member.html"> */}
           
-          <Route path="/board.html">
-            {/* <Member/> */}
+          <Route path="/board">
             <Board loggedEmail={loggedEmail}/>
           </Route>
           <Route path="/donate">

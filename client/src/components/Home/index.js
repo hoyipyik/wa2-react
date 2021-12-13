@@ -35,12 +35,7 @@ const Index = (props) => {
             const targetElement = document.getElementById("email")
             if(document.activeElement === targetElement){
                 if (event.code === "Enter" || event.code === "NumpadEnter") {
-                    // console.log(event.code, "event code")
                     console.log("Enter key was pressed. Run your function.");
-                    // console.log(email)
-                    // setTimeout(()=>{}, 1000)
-                    // window.alert()
-                    // console.log(email!==""&&focusFlag, 'hey')
                     if(email!==""&&focusFlag)
                     axios.post("/subscribeEmailList", {email})
                         .then(res=>{
@@ -49,14 +44,9 @@ const Index = (props) => {
                             if(res.data.flag){
                                 setEmail("")
                                 setSnackmsg("Send Success")
-                                // setTimeout(() => {
-                                //     setFocusFlag(false)
-                                // }, 1000)
                                 setFocusFlag(false)
                             }else{
-                                // setEmail("")1
                                 setSnackmsg("Invaliade email")
-                                // setFocusFlag(false)
                             }
                             
                         })
@@ -104,10 +94,6 @@ const Index = (props) => {
 
     return (
         <div className={props.cssFlag?"index2":"index"}>
-
-            {/* <header>
-                <h3><a href="/" >White Album 2</a></h3>
-            </header> */}
 
             <section class="start-poster">
                 <img id="start" src={props.cssFlag?wa2sun:wa2snow} alt="home-poster" width="100%"/>

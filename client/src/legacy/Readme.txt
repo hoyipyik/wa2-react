@@ -1,1 +1,0 @@
-This floder contains the document that we ever use but abondon now.

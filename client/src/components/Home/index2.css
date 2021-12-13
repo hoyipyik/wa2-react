@@ -169,6 +169,7 @@
 
 .index2 .characters p{
     font-style: italic;
+    font-size: 29px;
 }
 
 .index2 section.characters{
@@ -197,7 +198,7 @@
     height: 50px;
     padding: 20px 30px;
     margin: 25px 0;
-    border: 3px solid rgb(132, 159, 190);
+    border: 3px solid rgb(118, 160, 207);
     border-radius: 5px;
     font-size: 24px;
 }
