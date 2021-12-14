@@ -53,15 +53,24 @@ const App = () =>{
     }
 
     /**
+     * 页面渲染
+     * 
+     * 注:
+     * 为了可以进行全局css的控制, 同时方便在任何页面都能显示登录界面
+     * 因此将标题栏剥离出来
      * 
      */
     return (
       <div className='App'>
+        {/* 标题的部分 */}
         <header>
             <h3><Link to='/'><a>White Album 2</a></Link></h3>
+            {/* 主题修改按钮 */}
             <img alt='theme-changer' onClick={changeCss} id="theme-changer" src={themeIcon}/>
+            {/* 帐号管理按钮 */}
             <tag id='account' onClick={showLogPage}><AccountCircleIcon/></tag>
         </header>
+        {/* 显示登录注册页面 */}
         {logPage?
           <LogPage 
             logoutHandler={logoutHandler}
@@ -71,6 +80,7 @@ const App = () =>{
             loggedEmail={loggedEmail}
             signedHandler={signedHandler}
           /> : null}
+          {/* reat-router-dom 虚拟路由设定 */}
         <Switch>
           <Route path="/" exact>
             <Home cssFlag={cssFlag}/>

@@ -5,6 +5,8 @@ import "./donate.css"
 import payment from "../../img/payment.png"
 import wa2snow from "../../img/wa2snow.jpg"
 
+
+// 赞助页面  觉得好玩给个打赏 :)
 function donate() {
     return (
         <div className="donate">
@@ -33,6 +35,7 @@ function donate() {
                 </ul>
             </nav>
 
+            {/* 这部分的css用的flex */}
             <section id="pay">
                 <figure>
                     <figcaption>Alipay</figcaption>

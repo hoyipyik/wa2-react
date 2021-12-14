@@ -16,12 +16,19 @@ import "./index2.css"
 
 
 const Index = (props) => {
+    // react hooks 
+    // 订阅email的变量
     const [email, setEmail] = useState("")
+    // 是否选中input框的判断
     const [focusFlag, setFocusFlag] = useState(false)
+    // 二级菜单变量
     const [subNavFlag, setSubNavFlag] = useState("More")
+    // 输入内容发送标示
     const [sentFlag, setSentFlag] = useState(false)
+    // 反馈悬浮snack
     const [snackmsg, setSnackmsg] = useState("")
 
+    // 设定悬浮snack显示时间是3s
     useEffect(()=>{
         if(sentFlag){
             setTimeout(() => {
@@ -30,6 +37,7 @@ const Index = (props) => {
         }
     }, [sentFlag])
 
+    // 按键监听  如果focus在input, 而且有输入内容, 点击entre就可以发送
     useEffect(() => {
         const listener = (event)=>{
             const targetElement = document.getElementById("email")
@@ -37,6 +45,10 @@ const Index = (props) => {
                 if (event.code === "Enter" || event.code === "NumpadEnter") {
                     console.log("Enter key was pressed. Run your function.");
                     if(email!==""&&focusFlag)
+                    /**
+                     * axios是ajax的封装
+                     */
+                    // http post 发送给后端
                     axios.post("/subscribeEmailList", {email})
                         .then(res=>{
                             console.log(res.data, "Subscribe email send")
@@ -57,20 +69,22 @@ const Index = (props) => {
             }
             
         }
-        // console.log("key")
+
         document.addEventListener("keydown", listener)
+        // unmount component之后, 结束事件监听
         return () => {
             document.removeEventListener("keydown", listener)
         }
     }, )
 
+    // 输入函数
     const inputHandler = (event) =>{
         const {value} = event.target
         setEmail(value)
         setFocusFlag(true)
     }
     
-
+    // 二级菜单的jsx
     const subNav = 
         <ul id="sub-nav-ul">
             <li>
@@ -85,6 +99,7 @@ const Index = (props) => {
         </ul>
     
 
+    // 二级菜单的处理函数
     const subNavHandler = ()=>{
         if(subNavFlag === "More")
             setSubNavFlag("Hide")
@@ -92,13 +107,18 @@ const Index = (props) => {
             setSubNavFlag("More")
     }
 
+    //  渲染的jsx
     return (
         <div className={props.cssFlag?"index2":"index"}>
 
+            {/* 标题区域已经在App.js中集中展示 */}
+
+            {/* poster logo */}
             <section class="start-poster">
                 <img id="start" src={props.cssFlag?wa2sun:wa2snow} alt="home-poster" width="100%"/>
             </section>
 
+            {/* 导航 */}
             <nav className='main-nav'>
                 <ul>
                     <li>
@@ -114,10 +134,13 @@ const Index = (props) => {
                         <a class='nonhome' id='more' onClick={subNavHandler}>{subNavFlag}</a>
                     </li>
                 </ul>
+                {/* 二级菜单触发 */}
                 {subNavFlag !=="More"? <nav id="sub-nav">{subNav}</nav>:null}
             </nav>
             
             {subNavFlag !=="More"? <div><br/><br/></div>:null}
+
+            {/* 主体内容 */}
             <main>
                 <article>
                     <section class="intro-paragraph">
@@ -228,7 +251,7 @@ const Index = (props) => {
                     </h2>
                 </section>
                 
-
+                {/* 邮件订阅 */}
                 <section class="mail-subscribe">
                     <h4>Subscribe</h4>
                     <form>
@@ -239,18 +262,22 @@ const Index = (props) => {
             
             </main>
             
+            {/* 返回顶部 */}
             <section class="goto-top">
                
                 <a href="# ">
                     <img alt="goto-top" src="https://img.icons8.com/ios/50/000000/up-squared.png"/>
                 </a>
             </section>
+
+            {/* snackbar 显示 */}
             {sentFlag?
             <section className='snackBar'>
                 <Snackbar open={true} message={snackmsg}/>
             </section>
             :null}
             
+            {/* 底部版权footer */}
             <footer>
                 <hr/>
                 <p>Copyright 2021 WA2 by 贺烨毅(2019210737)</p>

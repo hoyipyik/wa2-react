@@ -6,8 +6,11 @@ import axios from '../../axios'
 import "./board.css"
 
 const Board = (props) => {
+    // list存放参数
     const [list, setList] = useState([])
 
+    // http get排位内容
+    // 此处的出发的条件是, 如果登录的账户有变动(登入登出变化)
     useEffect(()=>{
         axios.get("/boardList")
             .then(res=>{
@@ -19,21 +22,30 @@ const Board = (props) => {
             .catch(err=>console.log(err))
     }, [props.loggedEmail])
 
+    // 第一次页面加载的时候会触发http请求
     useEffect(()=>{
         axios.get("/boardList")
             .then(res=>{
                 let data = []
                 console.log(res.data)
                 data = [...res.data]
+                // 将内容存放到state中
                 setList(data)
             })
             .catch(err=>console.log(err))
+            // 离开本页面, unmount掉这个component
         return ()=>console.log('unmount')
     }, [])
 
+    // 加载的列表
+    /**
+     * 使用了js的array对象内置的map函数, 进行遍历
+     * 返回的内容是row组成数组.
+     * 
+     * 同时当前登入的用户的字体是加粗的
+     */
     const table = list.map((item, index)=>{
         const {name, email, likes} = item
-        // console.log(name, email, likes, "Hiii")
         const row = <tr key={index}>
             <td>{index+1}</td>
             <td>{name}</td>
@@ -41,6 +53,7 @@ const Board = (props) => {
             <td>{likes}</td>
         </tr>
 
+        // 对当前登入用户的判定
         if(email === props.loggedEmail)
             return <tr key={index}>
                 <td><b>{index+1}</b></td>
@@ -52,6 +65,7 @@ const Board = (props) => {
             return row
     })
 
+    // jsx
     return (
         <div className='board'>
             <section class="start-poster">
@@ -75,6 +89,7 @@ const Board = (props) => {
                 </ul>
             </nav>
 
+            {/* 表格部分 */}
             <section className='ranking-table'>
                 <h4>Ranking of likes clicked</h4>
                 <table>

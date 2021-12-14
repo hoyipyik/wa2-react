@@ -24,10 +24,13 @@ import axios  from '../../axios'
 
 export default function Playhouse(props) {
 
+    // 点赞函数
+    /**
+     * 点击一次, 会向后端发送post请求
+     * 对应的帐号下的likes会+1
+     */
     const addLike = () =>{
         const msg = {email: props.loggedEmail}
-        // setAddflag(true)
-        // setTimes(times+1)
         console.log('click')
         axios.post("/addlike", msg)
             .then(res=>{
@@ -36,8 +39,14 @@ export default function Playhouse(props) {
             .catch(err=>console.log(err))
     }
 
+    /**
+     * 注: 
+     * 相同的部分在home/index.js已经写过
+     */
+    // 渲染jsx
     return (
         <div className={props.cssFlag?'playhouse2':"playhouse"}>
+            {/* 标题部分已经剥离 */}
             {/* <header>
                 <h3><a href="/">White Album 2</a></h3>
             </header> */}
@@ -79,7 +88,6 @@ export default function Playhouse(props) {
                 
             </section>
 
-            {/* <!-- <section><div><br id="music"></div></section> --> */}
             
             <main >
                 
@@ -174,8 +182,8 @@ export default function Playhouse(props) {
                     </a>
                 </section>
 
+                {/* 点赞模块 */}
                 <section className='like-box'>
-                    {/* <h4>Share</h4> */}
                     <p>Love it? Click like to support us</p>
                     <tag><FavoriteIcon color="primary"  onClick={addLike}/></tag>
                 </section>

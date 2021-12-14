@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react'
 import axios from '../../axios'
 import "../Login/Login.css"
 
+// 和登录的类似
 const SignUp = (props) => {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [text, setText] = useState("")
 
+    // input内容
     const signHandler = (e) =>{
         const {name, value} = e.target
         if(name === "username"){
@@ -18,18 +20,17 @@ const SignUp = (props) => {
         }
     }
 
+    // 提交函数
     const signupSubmit = () =>{
         if(username!==""&&email!==""){
-            // console.log('try to submit signup')
             const signupData = {
                 username: username,
                 email: email,
                 text: text,
             }
-            // console.log(signupData)
+            // http post
             axios.post("/signup", signupData)
                 .then(res=>{
-                    // console.log(res)
                     const {flag} = res.data
                     console.log(flag, 'flag signup')
                     if(flag){
