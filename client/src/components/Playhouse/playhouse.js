@@ -25,15 +25,18 @@ import axios  from '../../axios'
 export default function Playhouse(props) {
 
     const addLike = () =>{
+        const {loggedEmail} = props
         const msg = {email: props.loggedEmail}
         // setAddflag(true)
         // setTimes(times+1)
         console.log('click')
+        if(loggedEmail!=='')
         axios.post("/addlike", msg)
             .then(res=>{
                 console.log(res)
             })
             .catch(err=>console.log(err))
+        else console.log('Not logged yet :(')
     }
 
     return (
